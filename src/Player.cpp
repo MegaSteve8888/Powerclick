@@ -16,3 +16,16 @@ void Player::addScore(int points) {
 int Player::getScore() const {
     return score;
 }
+
+//when enemy reached house lose one life
+void Player::loseLife() {
+    if (lives > 0) {
+        lives--;
+    }
+}
+
+//get current lives
+int Player::getLives() const {
+    return lives;
+}
+
