@@ -11,6 +11,12 @@ class House {
         float height;
         
     public:
+        // constructor
+        House();
+
+        //draw house on screen
+        void draw(sf::RenderWindow& window);
+        
 
 }
 
