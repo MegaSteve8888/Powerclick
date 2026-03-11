@@ -17,8 +17,13 @@ int main() {
     scoreText.setCharacterSize(20);
     scoreText.setFillColor(sf::Color::white);
     scoreText.setPosition(sf::Vector2f(10.0f, 10.0f));
-    
 
+    sf::Text LivesText(font);
+    LivesText.setCharacterSize(20);
+    LivesText.setFillColor(sf::Color::White);
+    LivesText.setPosition(sf::Vector2f(10.0f, 40.0f));
+    
+    
     while (window.isOpen()) {
         while (auto event = window.pollEvent()) {
             if (event->is<sf::Event::Closed>())
