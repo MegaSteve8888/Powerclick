@@ -15,3 +15,12 @@ House::House() {
     shape.setOutLineThickness(2.0f);
 }
 
+// draw the house on the window
+void House::draw(sf::RenderWindow& window) {
+    window.draw(shape);
+}
+
+//get boundaries for collision detection
+sf::FloatRect House::getBounds() const {
+    return shape.getGlobalBounds();
+}
