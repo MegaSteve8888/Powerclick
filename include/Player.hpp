@@ -7,3 +7,5 @@ class Player {
         int lives;
     public:
 }
+
+#endif
