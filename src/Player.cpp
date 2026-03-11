@@ -29,3 +29,13 @@ int Player::getLives() const {
     return lives;
 }
 
+//check if player still have lives
+bool Player::isAlive() const {
+    return lives > 0;
+}
+
+//reset for new game
+void Player::reset() {
+    score = STRARTING_SCORE;
+    lives = PLAYER_LIVES;
+}
