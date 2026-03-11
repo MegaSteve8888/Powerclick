@@ -20,6 +20,13 @@ const float HOUSE_Y = (SCREEN_HEIGHT - HOUSE_HEIGHT) / 2.0f;
 // setting game enemy
 const float ENEMY_SIZE = 30.0f;
 const float ENEMY_BASE_SPEED = 1.5f;
+const float ENEMY_SPEED_INCREMENT = 0.2f;
+const int MAX_ENEMIES = 20;
+const int POINTS_PER_KILL = 10;
 
+// setting wave
+const int ENEMIES_PER_WAVE_BASE = 3;
+const int ENEMIES_PER_WAVE_INCREMENT = 2;
+const float SPAWN_INTERVAL = 1.5f;
 
 #endif
