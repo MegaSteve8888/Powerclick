@@ -11,6 +11,9 @@ int main() {
     House house;
     Player player;
 
+    sf::Front front("assets/fonts/arial.ttf");
+
+    
     while (window.isOpen()) {
         while (auto event = window.pollEvent()) {
             if (event->is<sf::Event::Closed>())
