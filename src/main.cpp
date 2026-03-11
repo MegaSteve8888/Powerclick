@@ -13,7 +13,12 @@ int main() {
 
     sf::Front front("assets/fonts/arial.ttf");
 
+    sf::Text scoreText(font);
+    scoreText.setCharacterSize(20);
+    scoreText.setFillColor(sf::Color::white);
+    scoreText.setPosition(sf::Vector2f(10.0f, 10.0f));
     
+
     while (window.isOpen()) {
         while (auto event = window.pollEvent()) {
             if (event->is<sf::Event::Closed>())
