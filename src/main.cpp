@@ -1,6 +1,15 @@
 #include <SFML/Graphics.hpp>
+#include "House.hpp"
+#include "Player.hpp"
+#include "Constants.hpp"
+#include <string>
+
 int main() {
-    sf::RenderWindow window(sf::VideoMode({800, 600}), "Powerclick - Test");
+    sf::RenderWindow window(sf::VideoMode({SCREEN_WIDTH, SCREEN_HEIGHT}), GAME_TITLE);
+    window.setFramerateLimit(FRAME_RATE);
+
+    House house;
+    Player player;
 
     while (window.isOpen()) {
         while (auto event = window.pollEvent()) {
