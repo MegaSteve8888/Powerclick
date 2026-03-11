@@ -902,6 +902,11 @@ CMakeFiles/Powerclick.dir/src/House.cpp.o
  /opt/homebrew/include/SFML/Window/WindowEnums.hpp
  /opt/homebrew/include/SFML/Window/WindowHandle.hpp
 
+CMakeFiles/Powerclick.dir/src/Player.cpp.o
+ /Users/chenyu/Desktop/Powerclick/src/Player.cpp
+ /Users/chenyu/Desktop/Powerclick/include/Constant.hpp
+ /Users/chenyu/Desktop/Powerclick/include/Player.hpp
+
 CMakeFiles/Powerclick.dir/src/main.cpp.o
  /Users/chenyu/Desktop/Powerclick/src/main.cpp
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h

@@ -901,6 +901,10 @@ CMakeFiles/Powerclick.dir/src/House.cpp.o: /Users/chenyu/Desktop/Powerclick/src/
   /opt/homebrew/include/SFML/Window/WindowEnums.hpp \
   /opt/homebrew/include/SFML/Window/WindowHandle.hpp
 
+CMakeFiles/Powerclick.dir/src/Player.cpp.o: /Users/chenyu/Desktop/Powerclick/src/Player.cpp \
+  /Users/chenyu/Desktop/Powerclick/include/Constant.hpp \
+  /Users/chenyu/Desktop/Powerclick/include/Player.hpp
+
 CMakeFiles/Powerclick.dir/src/main.cpp.o: /Users/chenyu/Desktop/Powerclick/src/main.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h \
@@ -1802,6 +1806,8 @@ CMakeFiles/Powerclick.dir/src/main.cpp.o: /Users/chenyu/Desktop/Powerclick/src/m
 
 /Users/chenyu/Desktop/Powerclick/src/main.cpp:
 
+/Users/chenyu/Desktop/Powerclick/src/Player.cpp:
+
 /opt/homebrew/include/SFML/Window/WindowHandle.hpp:
 
 /opt/homebrew/include/SFML/Window/WindowBase.inl:
@@ -2009,6 +2015,8 @@ CMakeFiles/Powerclick.dir/src/main.cpp.o: /Users/chenyu/Desktop/Powerclick/src/m
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_int8_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_int32_t.h:
+
+/Users/chenyu/Desktop/Powerclick/include/Player.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/copy.h:
 
