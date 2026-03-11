@@ -11,8 +11,8 @@ House::House() {
     shape.setSize(sf::Vector2f(width, height));
     shape.setPosition(sf::Vector2f(x, y));
     shape.setFillColor(sf::Color(70, 130, 180));
-    shape.setOutLineColor(sf::Color::white);
-    shape.setOutLineThickness(2.0f);
+    shape.setOutlineColor(sf::Color::White);
+    shape.setOutlineThickness(2.0f);
 }
 
 // draw the house on the window
@@ -27,5 +27,5 @@ sf::FloatRect House::getBounds() const {
 
 //check if an enemy position has reached the house
 bool House::isReached(float enemyX, float enemyY) const {
-    return (enemyX >= x && enemyX <= x + with && enemyY >= y && enemyY <= y + height);
+    return (enemyX >= x && enemyX <= x + width && enemyY >= y && enemyY <= y + height);
 }
