@@ -24,3 +24,8 @@ void House::draw(sf::RenderWindow& window) {
 sf::FloatRect House::getBounds() const {
     return shape.getGlobalBounds();
 }
+
+//check if an enemy position has reached the house
+bool House::isReached(float enemyX, float enemyY) const {
+    return (enemyX >= x && enemyX <= x + with && enemyY >= y && enemyY <= y + height);
+}
