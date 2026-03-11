@@ -1,5 +1,5 @@
 #ifndef CONSTANT_HPP
-#define CONSTANTS_HPP
+#define CONSTANT_HPP
 
 //setting game window
 const int SCREEN_WIDRH = 800;
