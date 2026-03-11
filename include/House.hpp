@@ -4,7 +4,7 @@
 
 class House {
     private:
-        sf::RectangleShape;
+        sf::RectangleShape shape;
         float x;
         float y;
         float width;
@@ -21,7 +21,7 @@ class House {
         sf::FloatRect getBounds() const;
 
         //check if an enemy reached the house
-        bool isReached(float enemyX. float enemyY) const;
+        bool isReached(float enemyX, float enemyY) const;
 
 };
 

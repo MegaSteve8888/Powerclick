@@ -129,6 +129,30 @@ Powerclick/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/build
 .PHONY : Powerclick/fast
 
+src/House.o: src/House.cpp.o
+.PHONY : src/House.o
+
+# target to build an object file
+src/House.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/src/House.cpp.o
+.PHONY : src/House.cpp.o
+
+src/House.i: src/House.cpp.i
+.PHONY : src/House.i
+
+# target to preprocess a source file
+src/House.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/src/House.cpp.i
+.PHONY : src/House.cpp.i
+
+src/House.s: src/House.cpp.s
+.PHONY : src/House.s
+
+# target to generate assembly for a file
+src/House.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/src/House.cpp.s
+.PHONY : src/House.cpp.s
+
 src/Player.o: src/Player.cpp.o
 .PHONY : src/Player.o
 
@@ -186,6 +210,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Powerclick"
+	@echo "... src/House.o"
+	@echo "... src/House.i"
+	@echo "... src/House.s"
 	@echo "... src/Player.o"
 	@echo "... src/Player.i"
 	@echo "... src/Player.s"

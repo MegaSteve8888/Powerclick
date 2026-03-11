@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/chenyu/Desktop/Powerclick/src/House.cpp" "CMakeFiles/Powerclick.dir/src/House.cpp.o" "gcc" "CMakeFiles/Powerclick.dir/src/House.cpp.o.d"
   "/Users/chenyu/Desktop/Powerclick/src/Player.cpp" "CMakeFiles/Powerclick.dir/src/Player.cpp.o" "gcc" "CMakeFiles/Powerclick.dir/src/Player.cpp.o.d"
   "/Users/chenyu/Desktop/Powerclick/src/main.cpp" "CMakeFiles/Powerclick.dir/src/main.cpp.o" "gcc" "CMakeFiles/Powerclick.dir/src/main.cpp.o.d"
   )
