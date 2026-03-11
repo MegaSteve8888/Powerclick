@@ -2,7 +2,7 @@
 #include "Constant.hpp"
 
 //constructors
-Player::player() {
+Player::Player() {
     score = STRARTING_SCORE;
     lives = PLAYER_LIVES;
 }

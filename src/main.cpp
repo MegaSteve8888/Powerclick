@@ -1,7 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include "House.hpp"
 #include "Player.hpp"
-#include "Constants.hpp"
+#include "Constant.hpp"
 #include <string>
 
 int main() {
@@ -11,14 +11,14 @@ int main() {
     House house;
     Player player;
 
-    sf::Front front("assets/fonts/arial.ttf");
+    sf::Font front("assets/fonts/arial.ttf");
 
-    sf::Text scoreText(font);
+    sf::Text scoreText(front);
     scoreText.setCharacterSize(20);
-    scoreText.setFillColor(sf::Color::white);
+    scoreText.setFillColor(sf::Color::White);
     scoreText.setPosition(sf::Vector2f(10.0f, 10.0f));
 
-    sf::Text LivesText(font);
+    sf::Text LivesText(front);
     LivesText.setCharacterSize(20);
     LivesText.setFillColor(sf::Color::White);
     LivesText.setPosition(sf::Vector2f(10.0f, 40.0f));
@@ -34,7 +34,7 @@ int main() {
         house.draw(window);
 
         scoreText.setString("score: " + std::to_string(player.getScore()));
-        livesText.setString("lives: " + std::to_string(player.getLives()));
+        LivesText.setString("lives: " + std::to_string(player.getLives()));
         window.draw(scoreText);
         window.draw(LivesText);
 

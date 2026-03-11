@@ -15,7 +15,7 @@ class Player {
         // lives functions
         void loseLife();
         int getLives() const;
-        bool isALive() const;
+        bool isAlive() const;
 
         //Reset for new game
         void reset();

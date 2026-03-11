@@ -2,7 +2,7 @@
 #define CONSTANT_HPP
 
 //setting game window
-const int SCREEN_WIDRH = 800;
+const int SCREEN_WIDTH = 800;
 const int SCREEN_HEIGHT = 600;
 const char GAME_TITLE[] = "Powerclick";
 const int FRAME_RATE = 60;
@@ -14,7 +14,7 @@ const int STRARTING_SCORE = 0;
 //setting house
 const float HOUSE_WIDTH = 120.0f;
 const float HOUSE_HEIGHT = 100.0f;
-const float HOUSE_X = (SCREEN_WIDRH - HOUSE_WIDTH) / 2.0f;
+const float HOUSE_X = (SCREEN_WIDTH - HOUSE_WIDTH) / 2.0f;
 const float HOUSE_Y = (SCREEN_HEIGHT - HOUSE_HEIGHT) / 2.0f;
 
 // setting game enemy

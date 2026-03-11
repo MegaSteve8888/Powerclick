@@ -895,4 +895,7 @@ CMakeFiles/Powerclick.dir/src/main.cpp.o: \
   /opt/homebrew/include/SFML/System/FileInputStream.hpp \
   /opt/homebrew/include/SFML/System/InputStream.hpp \
   /opt/homebrew/include/SFML/System/MemoryInputStream.hpp \
-  /opt/homebrew/include/SFML/System/Sleep.hpp
+  /opt/homebrew/include/SFML/System/Sleep.hpp \
+  /Users/chenyu/Desktop/Powerclick/include/House.hpp \
+  /Users/chenyu/Desktop/Powerclick/include/Player.hpp \
+  /Users/chenyu/Desktop/Powerclick/include/Constant.hpp
