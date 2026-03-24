@@ -60,3 +60,7 @@ void AudioManager::toggleSound() {
         stopBGM();
     }
 }
+
+bool AudioManager::isSoundEnabled() const {
+    return soundEnabled;
+}
