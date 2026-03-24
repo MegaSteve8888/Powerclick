@@ -2,6 +2,10 @@
 #include "House.hpp"
 #include "Player.hpp"
 #include "Constant.hpp"
+#include "Enemy.h"
+#include "Utilities.hpp"
+#include <vector>
+#include <ctime>
 #include <string>
 
 int main() {
@@ -17,6 +21,12 @@ int main() {
     scoreText.setCharacterSize(20);
     scoreText.setFillColor(sf::Color::White);
     scoreText.setPosition(sf::Vector2f(10.0f, 10.0f));
+
+    srand(time(0));
+    std::vector<Enemy> enemies;
+    sf::Clock spawnClock;
+    float spawnInterval = 1.5f;
+    sf::Clock gameClock;
 
     sf::Text LivesText(front);
     LivesText.setCharacterSize(20);
