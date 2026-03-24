@@ -34,3 +34,8 @@ voud AudioManager::playHit() {
         hitSound.play();
     }
 }
+void AudioManager::playGameOver() {
+    if (soundEnabled) {
+        gameOverSound.play();
+    }
+}
