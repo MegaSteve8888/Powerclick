@@ -29,3 +29,8 @@ void AudioManager::playClick() {
         clickSound.play();
     }
 }
+voud AudioManager::playHit() {
+    if (soundEnabled) {
+        hitSound.play();
+    }
+}
