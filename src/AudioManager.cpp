@@ -24,4 +24,8 @@ bool AudioManager::int() {
     }
     return success;
 }
-
+void AudioManager::playClick() {
+    if (soundEnabled) {
+        clickSound.play();
+    }
+}
