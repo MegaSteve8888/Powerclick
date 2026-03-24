@@ -9,6 +9,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/chenyu/Desktop/Powerclick/src/AudioManager.cpp" "CMakeFiles/Powerclick.dir/src/AudioManager.cpp.o" "gcc" "CMakeFiles/Powerclick.dir/src/AudioManager.cpp.o.d"
+  "/Users/chenyu/Desktop/Powerclick/src/Enemy.cpp" "CMakeFiles/Powerclick.dir/src/Enemy.cpp.o" "gcc" "CMakeFiles/Powerclick.dir/src/Enemy.cpp.o.d"
+  "/Users/chenyu/Desktop/Powerclick/src/Game.cpp" "CMakeFiles/Powerclick.dir/src/Game.cpp.o" "gcc" "CMakeFiles/Powerclick.dir/src/Game.cpp.o.d"
   "/Users/chenyu/Desktop/Powerclick/src/House.cpp" "CMakeFiles/Powerclick.dir/src/House.cpp.o" "gcc" "CMakeFiles/Powerclick.dir/src/House.cpp.o.d"
   "/Users/chenyu/Desktop/Powerclick/src/Player.cpp" "CMakeFiles/Powerclick.dir/src/Player.cpp.o" "gcc" "CMakeFiles/Powerclick.dir/src/Player.cpp.o.d"
   "/Users/chenyu/Desktop/Powerclick/src/Utilities.cpp" "CMakeFiles/Powerclick.dir/src/Utilities.cpp.o" "gcc" "CMakeFiles/Powerclick.dir/src/Utilities.cpp.o.d"

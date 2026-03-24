@@ -85,12 +85,12 @@ clean: CMakeFiles/Powerclick.dir/clean
 CMakeFiles/Powerclick.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/chenyu/Desktop/Powerclick/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target Powerclick"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/chenyu/Desktop/Powerclick/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target Powerclick"
 .PHONY : CMakeFiles/Powerclick.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Powerclick.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/chenyu/Desktop/Powerclick/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/chenyu/Desktop/Powerclick/build/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Powerclick.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/chenyu/Desktop/Powerclick/build/CMakeFiles 0
 .PHONY : CMakeFiles/Powerclick.dir/rule
@@ -102,7 +102,7 @@ Powerclick: CMakeFiles/Powerclick.dir/rule
 # codegen rule for target.
 CMakeFiles/Powerclick.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/chenyu/Desktop/Powerclick/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Finished codegen for target Powerclick"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/chenyu/Desktop/Powerclick/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Finished codegen for target Powerclick"
 .PHONY : CMakeFiles/Powerclick.dir/codegen
 
 # clean rule for target.

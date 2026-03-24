@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Powerclick.dir/src/AudioManager.cpp.o"
   "CMakeFiles/Powerclick.dir/src/AudioManager.cpp.o.d"
+  "CMakeFiles/Powerclick.dir/src/Enemy.cpp.o"
+  "CMakeFiles/Powerclick.dir/src/Enemy.cpp.o.d"
+  "CMakeFiles/Powerclick.dir/src/Game.cpp.o"
+  "CMakeFiles/Powerclick.dir/src/Game.cpp.o.d"
   "CMakeFiles/Powerclick.dir/src/House.cpp.o"
   "CMakeFiles/Powerclick.dir/src/House.cpp.o.d"
   "CMakeFiles/Powerclick.dir/src/Player.cpp.o"

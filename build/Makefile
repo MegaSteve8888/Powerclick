@@ -153,6 +153,54 @@ src/AudioManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/src/AudioManager.cpp.s
 .PHONY : src/AudioManager.cpp.s
 
+src/Enemy.o: src/Enemy.cpp.o
+.PHONY : src/Enemy.o
+
+# target to build an object file
+src/Enemy.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/src/Enemy.cpp.o
+.PHONY : src/Enemy.cpp.o
+
+src/Enemy.i: src/Enemy.cpp.i
+.PHONY : src/Enemy.i
+
+# target to preprocess a source file
+src/Enemy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/src/Enemy.cpp.i
+.PHONY : src/Enemy.cpp.i
+
+src/Enemy.s: src/Enemy.cpp.s
+.PHONY : src/Enemy.s
+
+# target to generate assembly for a file
+src/Enemy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/src/Enemy.cpp.s
+.PHONY : src/Enemy.cpp.s
+
+src/Game.o: src/Game.cpp.o
+.PHONY : src/Game.o
+
+# target to build an object file
+src/Game.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/src/Game.cpp.o
+.PHONY : src/Game.cpp.o
+
+src/Game.i: src/Game.cpp.i
+.PHONY : src/Game.i
+
+# target to preprocess a source file
+src/Game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/src/Game.cpp.i
+.PHONY : src/Game.cpp.i
+
+src/Game.s: src/Game.cpp.s
+.PHONY : src/Game.s
+
+# target to generate assembly for a file
+src/Game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/src/Game.cpp.s
+.PHONY : src/Game.cpp.s
+
 src/House.o: src/House.cpp.o
 .PHONY : src/House.o
 
@@ -261,6 +309,12 @@ help:
 	@echo "... src/AudioManager.o"
 	@echo "... src/AudioManager.i"
 	@echo "... src/AudioManager.s"
+	@echo "... src/Enemy.o"
+	@echo "... src/Enemy.i"
+	@echo "... src/Enemy.s"
+	@echo "... src/Game.o"
+	@echo "... src/Game.i"
+	@echo "... src/Game.s"
 	@echo "... src/House.o"
 	@echo "... src/House.i"
 	@echo "... src/House.s"
