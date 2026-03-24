@@ -14,3 +14,8 @@ float distance(float x1, float y1, float x2, float y2) {
     flaot dy = y2 - y1;
     return sqrt(dx * dx + dy * dy);
 }
+
+// Check if a circle and rectangle overlap
+bool checkCollision(float circleX, float circleY, float radius, float rectX, float rectY, float rectW, float rectH);
+
+#endif
