@@ -50,3 +50,13 @@ void AudioManager::playBGM() {
     }
 }
 
+void AudioManager::stopBGM() {
+    bgm.stop();
+}
+
+void AudioManager::toggleSound() {
+    soundEnabled = !soundEnabled;
+    if (!soundEnabled) {
+        stopBGM();
+    }
+}
