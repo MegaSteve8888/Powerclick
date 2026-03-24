@@ -129,6 +129,30 @@ Powerclick/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/build
 .PHONY : Powerclick/fast
 
+src/AudioManager.o: src/AudioManager.cpp.o
+.PHONY : src/AudioManager.o
+
+# target to build an object file
+src/AudioManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/src/AudioManager.cpp.o
+.PHONY : src/AudioManager.cpp.o
+
+src/AudioManager.i: src/AudioManager.cpp.i
+.PHONY : src/AudioManager.i
+
+# target to preprocess a source file
+src/AudioManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/src/AudioManager.cpp.i
+.PHONY : src/AudioManager.cpp.i
+
+src/AudioManager.s: src/AudioManager.cpp.s
+.PHONY : src/AudioManager.s
+
+# target to generate assembly for a file
+src/AudioManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/src/AudioManager.cpp.s
+.PHONY : src/AudioManager.cpp.s
+
 src/House.o: src/House.cpp.o
 .PHONY : src/House.o
 
@@ -177,6 +201,30 @@ src/Player.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/src/Player.cpp.s
 .PHONY : src/Player.cpp.s
 
+src/Utilities.o: src/Utilities.cpp.o
+.PHONY : src/Utilities.o
+
+# target to build an object file
+src/Utilities.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/src/Utilities.cpp.o
+.PHONY : src/Utilities.cpp.o
+
+src/Utilities.i: src/Utilities.cpp.i
+.PHONY : src/Utilities.i
+
+# target to preprocess a source file
+src/Utilities.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/src/Utilities.cpp.i
+.PHONY : src/Utilities.cpp.i
+
+src/Utilities.s: src/Utilities.cpp.s
+.PHONY : src/Utilities.s
+
+# target to generate assembly for a file
+src/Utilities.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/src/Utilities.cpp.s
+.PHONY : src/Utilities.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -210,12 +258,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Powerclick"
+	@echo "... src/AudioManager.o"
+	@echo "... src/AudioManager.i"
+	@echo "... src/AudioManager.s"
 	@echo "... src/House.o"
 	@echo "... src/House.i"
 	@echo "... src/House.s"
 	@echo "... src/Player.o"
 	@echo "... src/Player.i"
 	@echo "... src/Player.s"
+	@echo "... src/Utilities.o"
+	@echo "... src/Utilities.i"
+	@echo "... src/Utilities.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
