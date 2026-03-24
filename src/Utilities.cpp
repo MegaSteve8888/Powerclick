@@ -20,6 +20,9 @@ bool checkCollision(float circleX, float circleY, float rasius, float rectX, flo
 
     if (circleX < rectX) closetX = rectX;
     else if (circleY > rectY + rectH) closetY = rectY;
+
+    if (circleY < rectY) closetX = rectY;
+    else if (circleY > rectY + rectH) closestY = rectY + rectH;
     
     // Check if closet point is inside the circle
     float dist = distance(circleX, circleY, closestX, closestY);
