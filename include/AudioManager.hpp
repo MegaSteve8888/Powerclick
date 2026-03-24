@@ -10,11 +10,12 @@ class AudioManager {
         sf::SoundBuffer gameOverBuffer;
         sf::Sound clickSound;
         sf::Sound hitSound;
+        sf::Sound gameOverSound;
         sf::Music bgm;
         bool soundEnabled;
     public:
         AudioManager();
-        bool int();
+        bool init();
         void playClick();
         void playHit();
         void playGameOver();

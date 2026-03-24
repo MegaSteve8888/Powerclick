@@ -6,7 +6,7 @@ Enemy::Enemy(float startX, float startY, float speed)
 {
     m_shape.setRadius(20.f);
     m_shape.setFillColor(sf::Color::Red);
-    m_shape.setPosition(startX, startY);
+    m_shape.setPosition(sf::Vector2f(startX, startY));
 }
 
 void Enemy::update(float dt, sf::Vector2f targetPosition)
@@ -22,7 +22,7 @@ void Enemy::update(float dt, sf::Vector2f targetPosition)
         dx /= length;
         dy /= length;
 
-        m_shape.move(dx * m_speed * dt, dy * m_speed * dt);
+        m_shape.move(sf::Vector2f(dx * m_speed * dt, dy * m_speed * dt));
     }
 }
 
@@ -34,8 +34,7 @@ void Enemy::render(sf::RenderWindow& window) const
 bool Enemy::isClicked(int mouseX, int mouseY) const
 {
     return m_shape.getGlobalBounds().contains(
-        static_cast<float>(mouseX),
-        static_cast<float>(mouseY)
+        sf::Vector2f(static_cast<float>(mouseX),static_cast<float>(mouseY))
     );
 }
 

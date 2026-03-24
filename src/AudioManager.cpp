@@ -1,12 +1,12 @@
 #include "AudioManager.hpp"
 
-AudioManager::AudioManager() {
-    soudEnabled = true;
+AudioManager::AudioManager() : clickSound(clickBuffer), hitSound(hitBuffer), gameOverSound(gameOverBuffer) {
+    soundEnabled = true;
 }
 
-bool AudioManager::int() {
+bool AudioManager::init() {
     bool success = true;
-    if (!clickBuffer.laodFromFile("assets/sounds/click.wav")) {
+    if (!clickBuffer.loadFromFile("assets/sounds/click.wav")) {
         success = false;
     } else {
         clickSound.setBuffer(clickBuffer);
@@ -17,7 +17,7 @@ bool AudioManager::int() {
     } else {
         hitSound.setBuffer(hitBuffer);
     }
-    if (!gmaeOverBuffer.loadFromFile("assets/sounds/gameover.wav")) {
+    if (!gameOverBuffer.loadFromFile("assets/sounds/gameover.wav")) {
         success = false;
     } else {
         gameOverSound.setBuffer(gameOverBuffer);
@@ -29,7 +29,7 @@ void AudioManager::playClick() {
         clickSound.play();
     }
 }
-voud AudioManager::playHit() {
+void AudioManager::playHit() {
     if (soundEnabled) {
         hitSound.play();
     }

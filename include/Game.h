@@ -14,8 +14,8 @@ private:
 
     // Event helpers
     void handleKeyPressed(sf::Keyboard::Key key);
-    void handleMousePressed(sf::Mouse::Button button, int x, int y);
-    void handleMouseMoved(int x, int y);
+    void handleMousePressed(sf::Mouse::Button button, sf::Vector2i position);
+    void handleMouseMoved(sf::Vector2i position);
 
 private:
     sf::RenderWindow m_window;

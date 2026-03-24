@@ -2,7 +2,7 @@
 #include <iostream>
 
 Game::Game()
-    : m_window(sf::VideoMode(1000, 700), "Powerclick - Assignment 1")
+    : m_window(sf::VideoMode({1000, 700}), "Powerclick - Assignment 1")
 {
     // Optional: cap FPS so the loop doesn't run too fast
     m_window.setFramerateLimit(60);
@@ -28,43 +28,26 @@ void Game::run()
 
 void Game::processEvents()
 {
-    sf::Event event;
-    while (m_window.pollEvent(event))
-    {
-        switch (event.type)
-        {
-        case sf::Event::Closed:
-            m_window.close();
-            break;
-
-        case sf::Event::KeyPressed:
-            handleKeyPressed(event.key.code);
-            break;
-
-        case sf::Event::MouseButtonPressed:
-            handleMousePressed(event.mouseButton.button,
-                               event.mouseButton.x,
-                               event.mouseButton.y);
-            break;
-
-        case sf::Event::MouseMoved:
-            handleMouseMoved(event.mouseMove.x, event.mouseMove.y);
-            break;
-
-        default:
-            break;
-        }
-    }
+   while (auto event = m_window.pollEvent()) {
+    if (event->is<sf::Event::Closed>())
+        m_window.close();
+    else if (const auto* k = event->getIf<sf::Event::KeyPressed>())
+        handleKeyPressed(k->code);
+    else if (const auto* m = event->getIf<sf::Event::MouseButtonPressed>())
+        handleMousePressed(m->button, m->position);
+    else if (const auto* mv = event->getIf<sf::Event::MouseMoved>())
+        handleMousemoved(mv->position);
+   }
 }
 
 void Game::handleKeyPressed(sf::Keyboard::Key key)
 {
-    if (key == sf::Keyboard::Escape)
+    if (key == sf::Keyboard::key::Escape)
     {
         // ESC closes the window
         m_window.close();
     }
-    else if (key == sf::Keyboard::P)
+    else if (key == sf::Keyboard::key::P)
     {
         // P toggles pause (useful later for debugging)
         m_paused = !m_paused;
@@ -74,7 +57,7 @@ void Game::handleKeyPressed(sf::Keyboard::Key key)
 
 void Game::handleMousePressed(sf::Mouse::Button button, int x, int y)
 {
-    if (button == sf::Mouse::Left)
+    if (button == sf::Mouse::Button::Left)
     {
         // Click position (this is the core interaction for a clicker game)
         std::cout << "Left click at: (" << x << ", " << y << ")\n";
