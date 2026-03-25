@@ -78,7 +78,23 @@ int main() {
                 player.loseLife();
             }
         }
+        // Check game over
+        if (!player.isAlive()) {
+            break;
+        }
+        // Draw
+        window.clear(sf::Color(30, 30, 50));
+        house.draw(window);
 
+        for (auto& enemy : enemies) {
+            enemy.render(window);
+        }
+        ScoreText.setString("ScoreL " + std::to_string(player.getScore()));
+        LivesText.setString("Lives: " + std::to_string(player.getLives()));
+        window.draw(scoreText);
+        window.draw(LivesText);
+
+        window.display();
         }
         }
     }
