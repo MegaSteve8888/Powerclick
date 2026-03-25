@@ -5286,8 +5286,10 @@ CMakeFiles/Powerclick.dir/src/main.cpp.o: /Users/chenyu/Desktop/Powerclick/src/m
   /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdint.h \
   /Users/chenyu/Desktop/Powerclick/include/Constant.hpp \
+  /Users/chenyu/Desktop/Powerclick/include/Enemy.h \
   /Users/chenyu/Desktop/Powerclick/include/House.hpp \
   /Users/chenyu/Desktop/Powerclick/include/Player.hpp \
+  /Users/chenyu/Desktop/Powerclick/include/Utilities.hpp \
   /opt/homebrew/include/SFML/Config.hpp \
   /opt/homebrew/include/SFML/Graphics.hpp \
   /opt/homebrew/include/SFML/Graphics/BlendMode.hpp \

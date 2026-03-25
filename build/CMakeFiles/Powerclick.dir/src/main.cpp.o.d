@@ -898,4 +898,6 @@ CMakeFiles/Powerclick.dir/src/main.cpp.o: \
   /opt/homebrew/include/SFML/System/Sleep.hpp \
   /Users/chenyu/Desktop/Powerclick/include/House.hpp \
   /Users/chenyu/Desktop/Powerclick/include/Player.hpp \
-  /Users/chenyu/Desktop/Powerclick/include/Constant.hpp
+  /Users/chenyu/Desktop/Powerclick/include/Constant.hpp \
+  /Users/chenyu/Desktop/Powerclick/include/Enemy.h \
+  /Users/chenyu/Desktop/Powerclick/include/Utilities.hpp
