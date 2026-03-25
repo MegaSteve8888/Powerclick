@@ -2,16 +2,15 @@
 #include <cmath>
 
 Enemy::Enemy(float startX, float startY, float speed)
-    : m_speed(speed)
+    : m_speed(speed), m_texture("assets/sprites/enemy.png"), m_sprite(m_texture)
 {
-    m_shape.setRadius(20.f);
-    m_shape.setFillColor(sf::Color::Red);
-    m_shape.setPosition(sf::Vector2f(startX, startY));
+    m_sprite.setPosition(sf::Vector2f(startX, startY));
+    m_sprite.setScale(sf::Vector2f(2.0f, 2.0f));
 }
 
 void Enemy::update(float dt, sf::Vector2f targetPosition)
 {
-    sf::Vector2f currentPos = m_shape.getPosition();
+    sf::Vector2f currentPos = m_sprite.getPosition();
 
     float dx = targetPosition.x - currentPos.x;
     float dy = targetPosition.y - currentPos.y;
@@ -22,13 +21,13 @@ void Enemy::update(float dt, sf::Vector2f targetPosition)
         dx /= length;
         dy /= length;
 
-        m_shape.move(sf::Vector2f(dx * m_speed * dt, dy * m_speed * dt));
+        m_sprite.move(sf::Vector2f(dx * m_speed * dt, dy * m_speed * dt));
     }
 }
 
 void Enemy::render(sf::RenderWindow& window) const
 {
-    window.draw(m_shape);
+    window.draw(m_sprite);
 }
 
 bool Enemy::isClicked(int mouseX, int mouseY) const
@@ -40,7 +39,7 @@ bool Enemy::isClicked(int mouseX, int mouseY) const
 
 bool Enemy::hasReachedTarget(sf::Vector2f targetPosition) const
 {
-    sf::Vector2f currentPos = m_shape.getPosition();
+    sf::Vector2f currentPos = m_sprite.getPosition();
 
     float dx = targetPosition.x - currentPos.x;
     float dy = targetPosition.y - currentPos.y;
