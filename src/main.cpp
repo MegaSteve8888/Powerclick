@@ -35,20 +35,43 @@ int main() {
 
     
     while (window.isOpen()) {
-        while (auto event = window.pollEvent()) {
-            if (event->is<sf::Event::Closed>())
-                window.close();
+       float dt = gameClock.restart().asSeconds();
+       while (auto event = window.pollEvent()) {
+        if (event->is<sf::Event::Closed>())
+            window.close();
+        if (const auto*mousePressed = event->getIf<sf::Event::MouseButtonPressed>()) {
+            if (mousePressed->button == sf::Mouse::Button::Left) {
+                for (int i = enemies.size() - 1; i >= 0; i--) {
+                    if (enemies[i].isClick(mousePressed->position.x, mousePressed->position.y)) {
+                        enemies.erase(enemies.begin() + i);
+                        player.addScore(POINTS_PER_KILL);
+                        break;
+                    }
+                }
+            }
         }
-        window.clear(sf::Color(30, 30, 50));
+        // Spawn enemies implement
+        if(spawnClock.getElapsedTime().asSeconds() > spawnInterval) {
+            int side = randomInt(0, 3);
+            float startX, startY;
+            if (side == 0) {
+                startX = randomInt(0, SCREEN_WIDTH); startY = -20; 
+                }
+            else if (side ==1) {
+                startX = randomInt(0, SCREEN_WIDTH); startY = SCREEN_HEIGHT + 20;
+            }
+            else if (side == 2) {
+                startX = -20; startY = randomInt(0, SCREEN_HEIGHT);
+            }
+            else {
+                startX = SCREEN_WIDTH + 20; startY = randomInt(0, SCREEN_HEIGHT);
+            }
+            enemies.push_back(Enemy(startX, startY, ENEMY_BASE_SPEED * 60.0f));
+            spawnClock.restart();
+            }
 
-        house.draw(window);
-
-        scoreText.setString("score: " + std::to_string(player.getScore()));
-        LivesText.setString("lives: " + std::to_string(player.getLives()));
-        window.draw(scoreText);
-        window.draw(LivesText);
-
-        window.display();
+        }
+       }
     }
     return 0;
 }
