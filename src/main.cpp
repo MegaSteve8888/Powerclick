@@ -42,7 +42,7 @@ int main() {
         if (const auto*mousePressed = event->getIf<sf::Event::MouseButtonPressed>()) {
             if (mousePressed->button == sf::Mouse::Button::Left) {
                 for (int i = enemies.size() - 1; i >= 0; i--) {
-                    if (enemies[i].isClick(mousePressed->position.x, mousePressed->position.y)) {
+                    if (enemies[i].isClicked(mousePressed->position.x, mousePressed->position.y)) {
                         enemies.erase(enemies.begin() + i);
                         player.addScore(POINTS_PER_KILL);
                         break;
@@ -74,7 +74,7 @@ int main() {
         for (int i = enemies.size() - 1; i >= 0; i--) {
             enemies[i].update(dt, houseCenter);
             if (enemies[i].hasReachedTarget(houseCenter)) {
-                enemied.erase(enemies.begin() + i);
+                enemies.erase(enemies.begin() + i);
                 player.loseLife();
             }
         }
@@ -89,13 +89,12 @@ int main() {
         for (auto& enemy : enemies) {
             enemy.render(window);
         }
-        ScoreText.setString("ScoreL " + std::to_string(player.getScore()));
+        scoreText.setString("Score: " + std::to_string(player.getScore()));
         LivesText.setString("Lives: " + std::to_string(player.getLives()));
         window.draw(scoreText);
         window.draw(LivesText);
 
         window.display();
-        }
         }
     }
     return 0;

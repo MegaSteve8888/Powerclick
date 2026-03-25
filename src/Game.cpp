@@ -36,18 +36,18 @@ void Game::processEvents()
     else if (const auto* m = event->getIf<sf::Event::MouseButtonPressed>())
         handleMousePressed(m->button, m->position);
     else if (const auto* mv = event->getIf<sf::Event::MouseMoved>())
-        handleMousemoved(mv->position);
+        handleMouseMoved(mv->position);
    }
 }
 
 void Game::handleKeyPressed(sf::Keyboard::Key key)
 {
-    if (key == sf::Keyboard::key::Escape)
+    if (key == sf::Keyboard::Key::Escape)
     {
         // ESC closes the window
         m_window.close();
     }
-    else if (key == sf::Keyboard::key::P)
+    else if (key == sf::Keyboard::Key::P)
     {
         // P toggles pause (useful later for debugging)
         m_paused = !m_paused;
@@ -55,12 +55,12 @@ void Game::handleKeyPressed(sf::Keyboard::Key key)
     }
 }
 
-void Game::handleMousePressed(sf::Mouse::Button button, int x, int y)
+void Game::handleMousePressed(sf::Mouse::Button button, sf::Vector2i position)
 {
     if (button == sf::Mouse::Button::Left)
     {
         // Click position (this is the core interaction for a clicker game)
-        std::cout << "Left click at: (" << x << ", " << y << ")\n";
+        std::cout << "Left click at: (" << position.x << ", " << position.y << ")\n";
 
         // Later: you’ll check if an enemy was clicked and remove it / subtract HP, etc.
         // Example idea:
@@ -68,9 +68,9 @@ void Game::handleMousePressed(sf::Mouse::Button button, int x, int y)
     }
 }
 
-void Game::handleMouseMoved(int x, int y)
+void Game::handleMouseMoved(sf::Vector2i position)
 {
-    m_mousePos = {x, y};
+    m_mousePos = position;
     // Later: hover effects / cursor UI / aim indicator, etc.
 }
 

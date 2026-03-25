@@ -16,6 +16,7 @@ public:
     sf::FloatRect getBounds() const;
 
 private:
-    sf::CircleShape m_shape;
+    sf::Texture m_texture;
+    sf::Sprite m_sprite;
     float m_speed;
 };
