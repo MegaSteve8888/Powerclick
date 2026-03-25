@@ -68,10 +68,19 @@ int main() {
             }
             enemies.push_back(Enemy(startX, startY, ENEMY_BASE_SPEED * 60.0f));
             spawnClock.restart();
+        }
+        // update enemies
+        sf::Vector2f houseCenter(HOUSE_X + HOUSE_WIDTH / 2, HOUSE_Y + HOUSE_HEIGHT / 2);
+        for (int i = enemies.size() - 1; i >= 0; i--) {
+            enemies[i].update(dt, houseCenter);
+            if (enemies[i].hasReachedTarget(houseCenter)) {
+                enemied.erase(enemies.begin() + i);
+                player.loseLife();
             }
+        }
 
         }
-       }
+        }
     }
     return 0;
 }
