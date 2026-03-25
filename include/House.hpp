@@ -4,7 +4,8 @@
 
 class House {
     private:
-        sf::RectangleShape shape;
+        sf::Texture texture;
+        sf::Sprite sprite;
         float x;
         float y;
         float width;
