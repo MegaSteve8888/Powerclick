@@ -3,7 +3,11 @@
 
 #include <cstdlib>
 #include <cmath>
+#include <string>
 #include <SFML/Graphics.hpp>
+
+// Resolve asset path from either repo root or build directory
+std::string getAssetPath(const std::string& relativePath);
 
 // Generate random integer between min and max number
 int randomInt(int min, int max);

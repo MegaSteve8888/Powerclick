@@ -28,16 +28,17 @@ void Game::run()
 
 void Game::processEvents()
 {
-   while (auto event = m_window.pollEvent()) {
-    if (event->is<sf::Event::Closed>())
-        m_window.close();
-    else if (const auto* k = event->getIf<sf::Event::KeyPressed>())
-        handleKeyPressed(k->code);
-    else if (const auto* m = event->getIf<sf::Event::MouseButtonPressed>())
-        handleMousePressed(m->button, m->position);
-    else if (const auto* mv = event->getIf<sf::Event::MouseMoved>())
-        handleMouseMoved(mv->position);
-   }
+    sf::Event event;
+    while (m_window.pollEvent(event)) {
+        if (event.type == sf::Event::Closed)
+            m_window.close();
+        else if (event.type == sf::Event::KeyPressed)
+            handleKeyPressed(event.key.code);
+        else if (event.type == sf::Event::MouseButtonPressed)
+            handleMousePressed(event.mouseButton.button, sf::Vector2i(event.mouseButton.x, event.mouseButton.y));
+        else if (event.type == sf::Event::MouseMoved)
+            handleMouseMoved(sf::Vector2i(event.mouseMove.x, event.mouseMove.y));
+    }
 }
 
 void Game::handleKeyPressed(sf::Keyboard::Key key)

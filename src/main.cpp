@@ -15,10 +15,12 @@ int main() {
     House house;
     Player player;
 
-    sf::Font front("assets/fonts/arial.ttf");
+    sf::Font font;
+    if (!font.loadFromFile(getAssetPath("assets/fonts/arial.ttf"))) {
+        // Handle font load failure here if needed
+    }
 
-    sf::Text scoreText(front);
-    scoreText.setCharacterSize(20);
+    sf::Text scoreText("Score: 0", font, 20);
     scoreText.setFillColor(sf::Color::White);
     scoreText.setPosition(sf::Vector2f(10.0f, 10.0f));
 
@@ -28,28 +30,27 @@ int main() {
     float spawnInterval = 1.5f;
     sf::Clock gameClock;
 
-    sf::Text LivesText(front);
-    LivesText.setCharacterSize(20);
-    LivesText.setFillColor(sf::Color::White);
-    LivesText.setPosition(sf::Vector2f(10.0f, 40.0f));
+    sf::Text livesText("Lives: 3", font, 20);
+    livesText.setFillColor(sf::Color::White);
+    livesText.setPosition(sf::Vector2f(10.0f, 40.0f));
 
-    
     while (window.isOpen()) {
-       float dt = gameClock.restart().asSeconds();
-       while (auto event = window.pollEvent()) {
-        if (event->is<sf::Event::Closed>())
-            window.close();
-        if (const auto*mousePressed = event->getIf<sf::Event::MouseButtonPressed>()) {
-            if (mousePressed->button == sf::Mouse::Button::Left) {
-                for (int i = enemies.size() - 1; i >= 0; i--) {
-                    if (enemies[i].isClicked(mousePressed->position.x, mousePressed->position.y)) {
-                        enemies.erase(enemies.begin() + i);
-                        player.addScore(POINTS_PER_KILL);
-                        break;
+        float dt = gameClock.restart().asSeconds();
+        sf::Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed)
+                window.close();
+            else if (event.type == sf::Event::MouseButtonPressed) {
+                if (event.mouseButton.button == sf::Mouse::Button::Left) {
+                    for (int i = enemies.size() - 1; i >= 0; i--) {
+                        if (enemies[i].isClicked(event.mouseButton.x, event.mouseButton.y)) {
+                            enemies.erase(enemies.begin() + i);
+                            player.addScore(POINTS_PER_KILL);
+                            break;
+                        }
                     }
                 }
             }
-        }
         // Spawn enemies implement
         if(spawnClock.getElapsedTime().asSeconds() > spawnInterval) {
             int side = randomInt(0, 3);
@@ -90,9 +91,9 @@ int main() {
             enemy.render(window);
         }
         scoreText.setString("Score: " + std::to_string(player.getScore()));
-        LivesText.setString("Lives: " + std::to_string(player.getLives()));
+        livesText.setString("Lives: " + std::to_string(player.getLives()));
         window.draw(scoreText);
-        window.draw(LivesText);
+        window.draw(livesText);
 
         window.display();
         }

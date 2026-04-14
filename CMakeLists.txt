@@ -2,9 +2,9 @@ cmake_minimum_required(VERSION 3.16)
 project(Powerclick)
 
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ONs)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(SFML 3 COMPONENTS Graphics Window Audio System REQUIRED)
+find_package(SFML 2.6.1 COMPONENTS graphics window audio system REQUIRED)
 
 file(GLOB SOURCES "src/*.cpp")
 
@@ -12,5 +12,5 @@ add_executable(${PROJECT_NAME} ${SOURCES})
 
 target_include_directories(${PROJECT_NAME} PRIVATE include)
 
-target_link_libraries(${PROJECT_NAME} SFML::Graphics SFML::Window SFML::Audio SFML::System)
+target_link_libraries(${PROJECT_NAME} PRIVATE sfml-graphics sfml-window sfml-audio sfml-system)
 

@@ -1,4 +1,25 @@
 #include "Utilities.hpp"
+#include <filesystem>
+
+std::string getAssetPath(const std::string& relativePath) {
+    namespace fs = std::filesystem;
+    fs::path path(relativePath);
+    if (fs::exists(path)) {
+        return path.string();
+    }
+
+    fs::path fallback = fs::current_path() / ".." / relativePath;
+    if (fs::exists(fallback)) {
+        return fallback.lexically_normal().string();
+    }
+
+    fs::path buildFallback = fs::current_path() / "build" / relativePath;
+    if (fs::exists(buildFallback)) {
+        return buildFallback.lexically_normal().string();
+    }
+
+    return relativePath;
+}
 
 // Generate a random integer between min and max
 int randomInt(int min, int max) {

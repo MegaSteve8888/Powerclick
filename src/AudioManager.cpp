@@ -1,4 +1,5 @@
 #include "AudioManager.hpp"
+#include "Utilities.hpp"
 
 AudioManager::AudioManager() : clickSound(clickBuffer), hitSound(hitBuffer), gameOverSound(gameOverBuffer) {
     soundEnabled = true;
@@ -6,18 +7,18 @@ AudioManager::AudioManager() : clickSound(clickBuffer), hitSound(hitBuffer), gam
 
 bool AudioManager::init() {
     bool success = true;
-    if (!clickBuffer.loadFromFile("assets/sounds/click.wav")) {
+    if (!clickBuffer.loadFromFile(getAssetPath("assets/sounds/click.wav"))) {
         success = false;
     } else {
         clickSound.setBuffer(clickBuffer);
     }
 
-    if (!hitBuffer.loadFromFile("assets/sounds/hit.wav")) {
+    if (!hitBuffer.loadFromFile(getAssetPath("assets/sounds/hit.wav"))) {
         success = false;
     } else {
         hitSound.setBuffer(hitBuffer);
     }
-    if (!gameOverBuffer.loadFromFile("assets/sounds/gameover.wav")) {
+    if (!gameOverBuffer.loadFromFile(getAssetPath("assets/sounds/gameover.wav"))) {
         success = false;
     } else {
         gameOverSound.setBuffer(gameOverBuffer);
@@ -42,8 +43,8 @@ void AudioManager::playGameOver() {
 
 void AudioManager::playBGM() {
     if (soundEnabled) {
-        if (bgm.openFromFile("assets/sounds/bgm.ogg")) {
-            bgm.setLooping(true);
+        if (bgm.openFromFile(getAssetPath("assets/sounds/bgm.ogg"))) {
+            bgm.setLoop(true);
             bgm.setVolume(50);
             bgm.play();
         }

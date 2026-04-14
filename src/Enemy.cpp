@@ -1,9 +1,14 @@
 #include "Enemy.h"
+#include "Utilities.hpp"
 #include <cmath>
 
 Enemy::Enemy(float startX, float startY, float speed)
-    : m_speed(speed), m_texture("assets/sprites/enemy.png"), m_sprite(m_texture)
+    : m_speed(speed)
 {
+    if (!m_texture.loadFromFile(getAssetPath("assets/sprites/enemy.png"))) {
+        // Handle texture load failure if needed
+    }
+    m_sprite.setTexture(m_texture);
     m_sprite.setPosition(sf::Vector2f(startX, startY));
     m_sprite.setScale(sf::Vector2f(2.0f, 2.0f));
 }
@@ -32,8 +37,8 @@ void Enemy::render(sf::RenderWindow& window) const
 
 bool Enemy::isClicked(int mouseX, int mouseY) const
 {
-    return m_shape.getGlobalBounds().contains(
-        sf::Vector2f(static_cast<float>(mouseX),static_cast<float>(mouseY))
+    return m_sprite.getGlobalBounds().contains(
+        sf::Vector2f(static_cast<float>(mouseX), static_cast<float>(mouseY))
     );
 }
 
@@ -50,10 +55,10 @@ bool Enemy::hasReachedTarget(sf::Vector2f targetPosition) const
 
 sf::Vector2f Enemy::getPosition() const
 {
-    return m_shape.getPosition();
+    return m_sprite.getPosition();
 }
 
 sf::FloatRect Enemy::getBounds() const
 {
-    return m_shape.getGlobalBounds();
+    return m_sprite.getGlobalBounds();
 }
