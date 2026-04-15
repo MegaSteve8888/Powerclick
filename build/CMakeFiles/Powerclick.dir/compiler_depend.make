@@ -822,6 +822,7 @@ CMakeFiles/Powerclick.dir/src/AudioManager.cpp.o: /Users/chenyu/Desktop/Powercli
   /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdint.h \
   /Users/chenyu/Desktop/Powerclick/include/AudioManager.hpp \
+  /Users/chenyu/Desktop/Powerclick/include/Utilities.hpp \
   /opt/homebrew/include/SFML/Audio.hpp \
   /opt/homebrew/include/SFML/Audio/AudioResource.hpp \
   /opt/homebrew/include/SFML/Audio/Export.hpp \
@@ -842,6 +843,41 @@ CMakeFiles/Powerclick.dir/src/AudioManager.cpp.o: /Users/chenyu/Desktop/Powercli
   /opt/homebrew/include/SFML/Audio/SoundSource.hpp \
   /opt/homebrew/include/SFML/Audio/SoundStream.hpp \
   /opt/homebrew/include/SFML/Config.hpp \
+  /opt/homebrew/include/SFML/Graphics.hpp \
+  /opt/homebrew/include/SFML/Graphics/BlendMode.hpp \
+  /opt/homebrew/include/SFML/Graphics/CircleShape.hpp \
+  /opt/homebrew/include/SFML/Graphics/Color.hpp \
+  /opt/homebrew/include/SFML/Graphics/Color.inl \
+  /opt/homebrew/include/SFML/Graphics/ConvexShape.hpp \
+  /opt/homebrew/include/SFML/Graphics/CoordinateType.hpp \
+  /opt/homebrew/include/SFML/Graphics/Drawable.hpp \
+  /opt/homebrew/include/SFML/Graphics/Export.hpp \
+  /opt/homebrew/include/SFML/Graphics/Font.hpp \
+  /opt/homebrew/include/SFML/Graphics/Glsl.hpp \
+  /opt/homebrew/include/SFML/Graphics/Glsl.inl \
+  /opt/homebrew/include/SFML/Graphics/Glyph.hpp \
+  /opt/homebrew/include/SFML/Graphics/Image.hpp \
+  /opt/homebrew/include/SFML/Graphics/PrimitiveType.hpp \
+  /opt/homebrew/include/SFML/Graphics/Rect.hpp \
+  /opt/homebrew/include/SFML/Graphics/Rect.inl \
+  /opt/homebrew/include/SFML/Graphics/RectangleShape.hpp \
+  /opt/homebrew/include/SFML/Graphics/RenderStates.hpp \
+  /opt/homebrew/include/SFML/Graphics/RenderTarget.hpp \
+  /opt/homebrew/include/SFML/Graphics/RenderTexture.hpp \
+  /opt/homebrew/include/SFML/Graphics/RenderWindow.hpp \
+  /opt/homebrew/include/SFML/Graphics/Shader.hpp \
+  /opt/homebrew/include/SFML/Graphics/Shape.hpp \
+  /opt/homebrew/include/SFML/Graphics/Sprite.hpp \
+  /opt/homebrew/include/SFML/Graphics/StencilMode.hpp \
+  /opt/homebrew/include/SFML/Graphics/Text.hpp \
+  /opt/homebrew/include/SFML/Graphics/Texture.hpp \
+  /opt/homebrew/include/SFML/Graphics/Transform.hpp \
+  /opt/homebrew/include/SFML/Graphics/Transform.inl \
+  /opt/homebrew/include/SFML/Graphics/Transformable.hpp \
+  /opt/homebrew/include/SFML/Graphics/Vertex.hpp \
+  /opt/homebrew/include/SFML/Graphics/VertexArray.hpp \
+  /opt/homebrew/include/SFML/Graphics/VertexBuffer.hpp \
+  /opt/homebrew/include/SFML/Graphics/View.hpp \
   /opt/homebrew/include/SFML/System.hpp \
   /opt/homebrew/include/SFML/System/Angle.hpp \
   /opt/homebrew/include/SFML/System/Angle.inl \
@@ -862,7 +898,28 @@ CMakeFiles/Powerclick.dir/src/AudioManager.cpp.o: /Users/chenyu/Desktop/Powercli
   /opt/homebrew/include/SFML/System/Vector2.hpp \
   /opt/homebrew/include/SFML/System/Vector2.inl \
   /opt/homebrew/include/SFML/System/Vector3.hpp \
-  /opt/homebrew/include/SFML/System/Vector3.inl
+  /opt/homebrew/include/SFML/System/Vector3.inl \
+  /opt/homebrew/include/SFML/Window.hpp \
+  /opt/homebrew/include/SFML/Window/Clipboard.hpp \
+  /opt/homebrew/include/SFML/Window/Context.hpp \
+  /opt/homebrew/include/SFML/Window/ContextSettings.hpp \
+  /opt/homebrew/include/SFML/Window/Cursor.hpp \
+  /opt/homebrew/include/SFML/Window/Event.hpp \
+  /opt/homebrew/include/SFML/Window/Event.inl \
+  /opt/homebrew/include/SFML/Window/Export.hpp \
+  /opt/homebrew/include/SFML/Window/GlResource.hpp \
+  /opt/homebrew/include/SFML/Window/Joystick.hpp \
+  /opt/homebrew/include/SFML/Window/Keyboard.hpp \
+  /opt/homebrew/include/SFML/Window/Mouse.hpp \
+  /opt/homebrew/include/SFML/Window/Sensor.hpp \
+  /opt/homebrew/include/SFML/Window/Touch.hpp \
+  /opt/homebrew/include/SFML/Window/VideoMode.hpp \
+  /opt/homebrew/include/SFML/Window/Vulkan.hpp \
+  /opt/homebrew/include/SFML/Window/Window.hpp \
+  /opt/homebrew/include/SFML/Window/WindowBase.hpp \
+  /opt/homebrew/include/SFML/Window/WindowBase.inl \
+  /opt/homebrew/include/SFML/Window/WindowEnums.hpp \
+  /opt/homebrew/include/SFML/Window/WindowHandle.hpp
 
 CMakeFiles/Powerclick.dir/src/Enemy.cpp.o: /Users/chenyu/Desktop/Powerclick/src/Enemy.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h \
@@ -1684,6 +1741,7 @@ CMakeFiles/Powerclick.dir/src/Enemy.cpp.o: /Users/chenyu/Desktop/Powerclick/src/
   /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdint.h \
   /Users/chenyu/Desktop/Powerclick/include/Enemy.h \
+  /Users/chenyu/Desktop/Powerclick/include/Utilities.hpp \
   /opt/homebrew/include/SFML/Config.hpp \
   /opt/homebrew/include/SFML/Graphics.hpp \
   /opt/homebrew/include/SFML/Graphics/BlendMode.hpp \
@@ -6295,8 +6353,6 @@ CMakeFiles/Powerclick.dir/src/main.cpp.o: /Users/chenyu/Desktop/Powerclick/src/m
 
 /Users/chenyu/Desktop/Powerclick/include/WaveManager.hpp:
 
-/Users/chenyu/Desktop/Powerclick/include/Utilities.hpp:
-
 /Users/chenyu/Desktop/Powerclick/src/Utilities.cpp:
 
 /Users/chenyu/Desktop/Powerclick/src/Player.cpp:
@@ -6308,6 +6364,8 @@ CMakeFiles/Powerclick.dir/src/main.cpp.o: /Users/chenyu/Desktop/Powerclick/src/m
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream:
 
 /Users/chenyu/Desktop/Powerclick/src/Game.cpp:
+
+/Users/chenyu/Desktop/Powerclick/include/Enemy.h:
 
 /opt/homebrew/include/SFML/Window/WindowHandle.hpp:
 
@@ -6347,6 +6405,26 @@ CMakeFiles/Powerclick.dir/src/main.cpp.o: /Users/chenyu/Desktop/Powerclick/src/m
 
 /opt/homebrew/include/SFML/Window.hpp:
 
+/opt/homebrew/include/SFML/System/Vector3.inl:
+
+/opt/homebrew/include/SFML/System/Vector3.hpp:
+
+/opt/homebrew/include/SFML/System/Vector2.hpp:
+
+/opt/homebrew/include/SFML/System/Time.inl:
+
+/opt/homebrew/include/SFML/System/Time.hpp:
+
+/opt/homebrew/include/SFML/System/String.inl:
+
+/opt/homebrew/include/SFML/System/Err.hpp:
+
+/Users/chenyu/Desktop/Powerclick/src/Enemy.cpp:
+
+/opt/homebrew/include/SFML/System/Angle.inl:
+
+/opt/homebrew/include/SFML/System.hpp:
+
 /opt/homebrew/include/SFML/Graphics/Transformable.hpp:
 
 /opt/homebrew/include/SFML/Graphics/Transform.inl:
@@ -6383,28 +6461,6 @@ CMakeFiles/Powerclick.dir/src/main.cpp.o: /Users/chenyu/Desktop/Powerclick/src/m
 
 /opt/homebrew/include/SFML/Graphics.hpp:
 
-/Users/chenyu/Desktop/Powerclick/include/Enemy.h:
-
-/opt/homebrew/include/SFML/System/Vector3.inl:
-
-/opt/homebrew/include/SFML/System/Vector3.hpp:
-
-/opt/homebrew/include/SFML/System/Vector2.hpp:
-
-/opt/homebrew/include/SFML/System/Time.inl:
-
-/opt/homebrew/include/SFML/System/Time.hpp:
-
-/opt/homebrew/include/SFML/System/String.inl:
-
-/opt/homebrew/include/SFML/System/Err.hpp:
-
-/Users/chenyu/Desktop/Powerclick/src/Enemy.cpp:
-
-/opt/homebrew/include/SFML/System/Angle.inl:
-
-/opt/homebrew/include/SFML/System.hpp:
-
 /opt/homebrew/include/SFML/Config.hpp:
 
 /opt/homebrew/include/SFML/Audio/SoundRecorder.hpp:
@@ -6422,6 +6478,8 @@ CMakeFiles/Powerclick.dir/src/main.cpp.o: /Users/chenyu/Desktop/Powerclick/src/m
 /opt/homebrew/include/SFML/Audio/Listener.hpp:
 
 /opt/homebrew/include/SFML/Audio/AudioResource.hpp:
+
+/Users/chenyu/Desktop/Powerclick/include/Utilities.hpp:
 
 /opt/homebrew/include/SFML/Audio/SoundBufferRecorder.hpp:
 
