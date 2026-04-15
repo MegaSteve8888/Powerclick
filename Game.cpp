@@ -1,10 +1,10 @@
 #include "Game.h"
 #include <iostream>
+#include <cstdlib>
 
 Game::Game()
-    : m_window(sf::VideoMode(1000, 700), "Powerclick - Assignment 1")
+    : m_window(sf::VideoMode(1000, 700), "Powerclick")
 {
-    // Optional: cap FPS so the loop doesn't run too fast
     m_window.setFramerateLimit(60);
 }
 
@@ -14,14 +14,10 @@ void Game::run()
 
     while (m_window.isOpen())
     {
-        // dt = seconds since last frame
         float dt = clock.restart().asSeconds();
 
         processEvents();
-
-        if (!m_paused)
-            update(dt);
-
+        update(dt);
         render();
     }
 }
@@ -57,54 +53,115 @@ void Game::processEvents()
     }
 }
 
-void Game::handleKeyPressed(sf::Keyboard::Key key)
+void Game::spawnEnemy()
 {
-    if (key == sf::Keyboard::Escape)
+    float y = static_cast<float>(rand() % 600 + 50);
+    m_enemies.emplace_back(0.f, y, 100.f);
+}
+
+void Game::update(float dt)
+{
+    if (m_state != GameState::Playing)
+        return;
+
+    m_spawnTimer += dt;
+
+    if (m_spawnTimer > 1.5f)
     {
-        // ESC closes the window
-        m_window.close();
+        spawnEnemy();
+        m_spawnTimer = 0.f;
     }
-    else if (key == sf::Keyboard::P)
+
+    sf::Vector2f housePosition(900.f, 350.f);
+
+    for (auto& e : m_enemies)
+        e.update(dt, housePosition);
+
+    // Check if enemies reach house
+    for (auto it = m_enemies.begin(); it != m_enemies.end(); )
     {
-        // P toggles pause (useful later for debugging)
-        m_paused = !m_paused;
-        std::cout << (m_paused ? "Paused\n" : "Unpaused\n");
+        if (it->hasReachedTarget(housePosition))
+        {
+            it = m_enemies.erase(it);
+            m_lives--;
+
+            if (m_lives <= 0)
+                m_state = GameState::GameOver;
+        }
+        else
+        {
+            ++it;
+        }
     }
+
+    m_ui.updateScore(m_score);
+    m_ui.updateLives(m_lives);
 }
 
 void Game::handleMousePressed(sf::Mouse::Button button, int x, int y)
 {
-    if (button == sf::Mouse::Left)
+    if (button == sf::Mouse::Left && m_state == GameState::Playing)
     {
-        // Click position (this is the core interaction for a clicker game)
-        std::cout << "Left click at: (" << x << ", " << y << ")\n";
+        for (auto it = m_enemies.begin(); it != m_enemies.end(); )
+        {
+            if (it->isClicked(x, y))
+            {
+                it = m_enemies.erase(it);
+                m_score += 10;
+            }
+            else
+            {
+                ++it;
+            }
+        }
+    }
+}
 
-        // Later: you’ll check if an enemy was clicked and remove it / subtract HP, etc.
-        // Example idea:
-        // if (enemyBounds.contains((float)x, (float)y)) { enemy.takeDamage(); }
+void Game::handleKeyPressed(sf::Keyboard::Key key)
+{
+    if (key == sf::Keyboard::Escape)
+        m_window.close();
+
+    if (key == sf::Keyboard::Enter)
+    {
+        if (m_state == GameState::Menu)
+        {
+            m_state = GameState::Playing;
+        }
+        else if (m_state == GameState::GameOver)
+        {
+            m_state = GameState::Menu;
+            m_score = 0;
+            m_lives = 3;
+            m_enemies.clear();
+        }
     }
 }
 
 void Game::handleMouseMoved(int x, int y)
 {
     m_mousePos = {x, y};
-    // Later: hover effects / cursor UI / aim indicator, etc.
-}
-
-void Game::update(float dt)
-{
-    // Stub for later assignments:
-    // - spawn enemies over time
-    // - move enemies toward the house
-    // - check win/lose conditions
-    (void)dt; // prevents unused warning until you implement logic
 }
 
 void Game::render()
 {
     m_window.clear();
 
-    // Stub: draw background / enemies / UI later
+    if (m_state == GameState::Menu)
+    {
+        m_ui.drawMainMenu(m_window);
+    }
+    else if (m_state == GameState::Playing)
+    {
+        for (auto& e : m_enemies)
+            e.render(m_window);
+
+        m_ui.drawHUD(m_window);
+    }
+    else if (m_state == GameState::GameOver)
+    {
+        m_ui.drawGameOver(m_window);
+    }
 
     m_window.display();
 }
