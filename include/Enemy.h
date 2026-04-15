@@ -4,7 +4,10 @@
 class Enemy
 {
 public:
-    Enemy(float startX, float startY, float speed);
+    enum class Type { Normal, Fast };
+
+    // Temporary enemy type support: normal and fast.
+    Enemy(float startX, float startY, float speed, Type type = Type::Normal);
 
     void update(float dt, sf::Vector2f targetPosition);
     void render(sf::RenderWindow& window) const;
@@ -19,4 +22,5 @@ private:
     sf::Texture m_texture;
     sf::Sprite m_sprite;
     float m_speed;
+    Type m_type;
 };

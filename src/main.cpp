@@ -51,25 +51,42 @@ int main() {
                     }
                 }
             }
+        }
+
         // Spawn enemies implement
-        if(spawnClock.getElapsedTime().asSeconds() > spawnInterval) {
+        if (spawnClock.getElapsedTime().asSeconds() > spawnInterval) {
             int side = randomInt(0, 3);
             float startX, startY;
             if (side == 0) {
-                startX = randomInt(0, SCREEN_WIDTH); startY = -20; 
-                }
-            else if (side ==1) {
-                startX = randomInt(0, SCREEN_WIDTH); startY = SCREEN_HEIGHT + 20;
+                startX = randomInt(0, SCREEN_WIDTH);
+                startY = -20;
+            }
+            else if (side == 1) {
+                startX = randomInt(0, SCREEN_WIDTH);
+                startY = SCREEN_HEIGHT + 20;
             }
             else if (side == 2) {
-                startX = -20; startY = randomInt(0, SCREEN_HEIGHT);
+                startX = -20;
+                startY = randomInt(0, SCREEN_HEIGHT);
             }
             else {
-                startX = SCREEN_WIDTH + 20; startY = randomInt(0, SCREEN_HEIGHT);
+                startX = SCREEN_WIDTH + 20;
+                startY = randomInt(0, SCREEN_HEIGHT);
             }
-            enemies.push_back(Enemy(startX, startY, ENEMY_BASE_SPEED * 60.0f));
+
+            // Temporary fast enemy spawning logic for testing.
+            bool fastEnemy = (randomInt(1, FAST_ENEMY_SPAWN_CHANCE) == 1);
+            float enemySpeed = ENEMY_BASE_SPEED * 60.0f;
+            Enemy::Type type = Enemy::Type::Normal;
+            if (fastEnemy) {
+                enemySpeed *= FAST_ENEMY_SPEED_MULTIPLIER;
+                type = Enemy::Type::Fast;
+            }
+
+            enemies.push_back(Enemy(startX, startY, enemySpeed, type));
             spawnClock.restart();
         }
+
         // update enemies
         sf::Vector2f houseCenter(HOUSE_X + HOUSE_WIDTH / 2, HOUSE_Y + HOUSE_HEIGHT / 2);
         for (int i = enemies.size() - 1; i >= 0; i--) {
@@ -79,10 +96,12 @@ int main() {
                 player.loseLife();
             }
         }
+
         // Check game over
         if (!player.isAlive()) {
             break;
         }
+
         // Draw
         window.clear(sf::Color(30, 30, 50));
         house.draw(window);
@@ -96,7 +115,6 @@ int main() {
         window.draw(livesText);
 
         window.display();
-        }
     }
     return 0;
 }

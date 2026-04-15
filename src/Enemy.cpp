@@ -2,8 +2,8 @@
 #include "Utilities.hpp"
 #include <cmath>
 
-Enemy::Enemy(float startX, float startY, float speed)
-    : m_speed(speed)
+Enemy::Enemy(float startX, float startY, float speed, Type type)
+    : m_speed(speed), m_type(type)
 {
     if (!m_texture.loadFromFile(getAssetPath("assets/sprites/enemy.png"))) {
         // Handle texture load failure if needed
@@ -11,6 +11,11 @@ Enemy::Enemy(float startX, float startY, float speed)
     m_sprite.setTexture(m_texture);
     m_sprite.setPosition(sf::Vector2f(startX, startY));
     m_sprite.setScale(sf::Vector2f(2.0f, 2.0f));
+
+    // Temporary fast enemy visual marker for testing.
+    if (m_type == Type::Fast) {
+        m_sprite.setColor(sf::Color::Red);
+    }
 }
 
 void Enemy::update(float dt, sf::Vector2f targetPosition)

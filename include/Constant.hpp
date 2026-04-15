@@ -21,8 +21,11 @@ const float HOUSE_Y = (SCREEN_HEIGHT - HOUSE_HEIGHT) / 2.0f;
 const float ENEMY_SIZE = 30.0f;
 const float ENEMY_BASE_SPEED = 1.5f;
 const float ENEMY_SPEED_INCREMENT = 0.2f;
+// Temporary fast enemy tuning values - adjust or remove once fast enemy design is finalized.
+const float FAST_ENEMY_SPEED_MULTIPLIER = 1.8f;
 const int MAX_ENEMIES = 20;
 const int POINTS_PER_KILL = 10;
+const int FAST_ENEMY_SPAWN_CHANCE = 5; // one in five enemies is fast
 
 // setting wave
 const int ENEMIES_PER_WAVE_BASE = 3;
