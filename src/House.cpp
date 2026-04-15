@@ -2,27 +2,25 @@
 #include "Constant.hpp"
 
 //constructor
-House::House() {
+House::House() : texture("assets/sprites/house.png"), sprite(texture) {
     x = HOUSE_X;
     y = HOUSE_Y;
     width = HOUSE_WIDTH;
     height = HOUSE_HEIGHT;
 
-    shape.setSize(sf::Vector2f(width, height));
-    shape.setPosition(sf::Vector2f(x, y));
-    shape.setFillColor(sf::Color(70, 130, 180));
-    shape.setOutlineColor(sf::Color::White);
-    shape.setOutlineThickness(2.0f);
+    sprite.setPosition(sf::Vector2f(x, y));
+    sprite.setScale(sf::Vector2f(2.0f, 2.0f));
+  
 }
 
 // draw the house on the window
 void House::draw(sf::RenderWindow& window) {
-    window.draw(shape);
+    window.draw(sprite);
 }
 
 //get boundaries for collision detection
 sf::FloatRect House::getBounds() const {
-    return shape.getGlobalBounds();
+    return sprite.getGlobalBounds();
 }
 
 //check if an enemy position has reached the house

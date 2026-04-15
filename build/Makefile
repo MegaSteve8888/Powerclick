@@ -273,6 +273,30 @@ src/Utilities.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/src/Utilities.cpp.s
 .PHONY : src/Utilities.cpp.s
 
+src/WaveManager.o: src/WaveManager.cpp.o
+.PHONY : src/WaveManager.o
+
+# target to build an object file
+src/WaveManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/src/WaveManager.cpp.o
+.PHONY : src/WaveManager.cpp.o
+
+src/WaveManager.i: src/WaveManager.cpp.i
+.PHONY : src/WaveManager.i
+
+# target to preprocess a source file
+src/WaveManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/src/WaveManager.cpp.i
+.PHONY : src/WaveManager.cpp.i
+
+src/WaveManager.s: src/WaveManager.cpp.s
+.PHONY : src/WaveManager.s
+
+# target to generate assembly for a file
+src/WaveManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/src/WaveManager.cpp.s
+.PHONY : src/WaveManager.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -324,6 +348,9 @@ help:
 	@echo "... src/Utilities.o"
 	@echo "... src/Utilities.i"
 	@echo "... src/Utilities.s"
+	@echo "... src/WaveManager.o"
+	@echo "... src/WaveManager.i"
+	@echo "... src/WaveManager.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

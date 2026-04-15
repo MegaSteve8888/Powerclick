@@ -900,4 +900,25 @@ CMakeFiles/Powerclick.dir/src/main.cpp.o: \
   /Users/chenyu/Desktop/Powerclick/include/Player.hpp \
   /Users/chenyu/Desktop/Powerclick/include/Constant.hpp \
   /Users/chenyu/Desktop/Powerclick/include/Enemy.h \
-  /Users/chenyu/Desktop/Powerclick/include/Utilities.hpp
+  /Users/chenyu/Desktop/Powerclick/include/Utilities.hpp \
+  /Users/chenyu/Desktop/Powerclick/include/AudioManager.hpp \
+  /opt/homebrew/include/SFML/Audio.hpp \
+  /opt/homebrew/include/SFML/Audio/InputSoundFile.hpp \
+  /opt/homebrew/include/SFML/Audio/Export.hpp \
+  /opt/homebrew/include/SFML/Audio/SoundFileReader.hpp \
+  /opt/homebrew/include/SFML/Audio/SoundChannel.hpp \
+  /opt/homebrew/include/SFML/Audio/Listener.hpp \
+  /opt/homebrew/include/SFML/Audio/Music.hpp \
+  /opt/homebrew/include/SFML/Audio/SoundStream.hpp \
+  /opt/homebrew/include/SFML/Audio/SoundSource.hpp \
+  /opt/homebrew/include/SFML/Audio/AudioResource.hpp \
+  /opt/homebrew/include/SFML/Audio/OutputSoundFile.hpp \
+  /opt/homebrew/include/SFML/Audio/SoundFileWriter.hpp \
+  /opt/homebrew/include/SFML/Audio/PlaybackDevice.hpp \
+  /opt/homebrew/include/SFML/Audio/Sound.hpp \
+  /opt/homebrew/include/SFML/Audio/SoundBuffer.hpp \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_set \
+  /opt/homebrew/include/SFML/Audio/SoundBufferRecorder.hpp \
+  /opt/homebrew/include/SFML/Audio/SoundRecorder.hpp \
+  /opt/homebrew/include/SFML/Audio/SoundFileFactory.hpp \
+  /opt/homebrew/include/SFML/Audio/SoundFileFactory.inl

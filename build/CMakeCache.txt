@@ -229,7 +229,7 @@ Powerclick_IS_TOP_LEVEL:STATIC=ON
 Powerclick_SOURCE_DIR:STATIC=/Users/chenyu/Desktop/Powerclick
 
 //The directory containing a CMake configuration file for SFML.
-SFML_DIR:PATH=/opt/homebrew/lib/cmake/SFML
+SFML_DIR:PATH=SFML_DIR-NOTFOUND
 
 //Path to a file.
 SFML_DOC_DIR:PATH=/opt/homebrew/share/doc/SFML

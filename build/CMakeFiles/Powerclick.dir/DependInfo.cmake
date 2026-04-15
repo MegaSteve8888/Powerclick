@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/chenyu/Desktop/Powerclick/src/House.cpp" "CMakeFiles/Powerclick.dir/src/House.cpp.o" "gcc" "CMakeFiles/Powerclick.dir/src/House.cpp.o.d"
   "/Users/chenyu/Desktop/Powerclick/src/Player.cpp" "CMakeFiles/Powerclick.dir/src/Player.cpp.o" "gcc" "CMakeFiles/Powerclick.dir/src/Player.cpp.o.d"
   "/Users/chenyu/Desktop/Powerclick/src/Utilities.cpp" "CMakeFiles/Powerclick.dir/src/Utilities.cpp.o" "gcc" "CMakeFiles/Powerclick.dir/src/Utilities.cpp.o.d"
+  "/Users/chenyu/Desktop/Powerclick/src/WaveManager.cpp" "CMakeFiles/Powerclick.dir/src/WaveManager.cpp.o" "gcc" "CMakeFiles/Powerclick.dir/src/WaveManager.cpp.o.d"
   "/Users/chenyu/Desktop/Powerclick/src/main.cpp" "CMakeFiles/Powerclick.dir/src/main.cpp.o" "gcc" "CMakeFiles/Powerclick.dir/src/main.cpp.o.d"
   )
 
