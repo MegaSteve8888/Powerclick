@@ -2,9 +2,7 @@
 #include "Utilities.hpp"
 #include <cmath>
 
-eum class Type {Normal, Fast };
-Enemy(float startX, float StartY, float speed, const sf::Texture texture, Type type = Type::Normal);
-Enemy::Enemy(float startX, float startY, float speed, const sf::Texture& texture, Type type): m_speed(speed), m_spirte(texture), m_type(type)
+Enemy::Enemy(float startX, float startY, float speed, const sf::Texture& texture, Type type): m_speed(speed), m_sprite(texture), m_type(type)
 {
         // Handle texture load failure if needed
     m_sprite.setPosition(sf::Vector2f(startX, startY));
@@ -38,8 +36,8 @@ void Enemy::render(sf::RenderWindow& window) const
 }
 
 bool Enemy::isClicked(int mouseX, int mouseY) const
-{
-    sf::Vector2f(static_cast<float>(mouseX),static_cast<float>(mouseY))
+{   return m_sprite.getGlobalBounds().contains(sf::Vector2f(static_cast<float>(mouseX),static_cast<float>(mouseY)));
+    
 }
 
 bool Enemy::hasReachedTarget(sf::Vector2f targetPosition) const

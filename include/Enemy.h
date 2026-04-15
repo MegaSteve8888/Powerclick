@@ -4,8 +4,8 @@
 class Enemy
 {
 public:
-    Enemy(float startX, float startY, float speed);
-
+    enum class Type {Normal, Fast };
+    Enemy(float startX, float startY, float speed, const sf::Texture &texture, Type type = Type::Normal);
     void update(float dt, sf::Vector2f targetPosition);
     void render(sf::RenderWindow& window) const;
 

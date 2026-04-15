@@ -23,12 +23,10 @@ int main() {
     audio.init();
     audio.playBGM();
 
-    sf::Font font;
-    if (!font.loadFromFile(getAssetPath("assets/fonts/arial.ttf"))) {
-        // Handle font load failure here if needed
-    }
+    sf::Font font("assets/fonts/arial.ttf");
 
-    sf::Text scoreText("Score: 0", font, 20);
+    sf::Text scoreText(font);
+    scoreText.setCharacterSize(20);
     scoreText.setFillColor(sf::Color::White);
     scoreText.setPosition(sf::Vector2f(10.0f, 10.0f));
 
@@ -39,44 +37,31 @@ int main() {
     sf::Clock gameClock;
     sf::Texture enemyTexture("assets/sprites/enemy.png");
 
-    sf::Text livesText("Lives: 3", font, 20);
+    sf::Text livesText(font);
+    livesText.setCharacterSize(20);
     livesText.setFillColor(sf::Color::White);
     livesText.setPosition(sf::Vector2f(10.0f, 40.0f));
 
     while (window.isOpen()) {
-<<<<<<< Updated upstream
+//Updated upstream
         float dt = gameClock.restart().asSeconds();
-        sf::Event event;
-        while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed)
+      
+        while (auto event = window.pollEvent()) {
+            if (event->is<sf::Event::Closed>())
                 window.close();
-            else if (event.type == sf::Event::MouseButtonPressed) {
-                if (event.mouseButton.button == sf::Mouse::Button::Left) {
+            if (const auto* mousePressed = event->getIf<sf::Event::MouseButtonPressed>()) {
+                if (mousePressed->button == sf::Mouse::Button::Left) {
                     for (int i = enemies.size() - 1; i >= 0; i--) {
-                        if (enemies[i].isClicked(event.mouseButton.x, event.mouseButton.y)) {
+                        if (enemies[i].isClicked(mousePressed->position.x, mousePressed->position.y)) {
                             enemies.erase(enemies.begin() + i);
                             player.addScore(POINTS_PER_KILL);
+                            audio.playClick();
                             break;
                         }
-=======
-       float dt = gameClock.restart().asSeconds();
-       while (auto event = window.pollEvent()) {
-        if (event->is<sf::Event::Closed>())
-            window.close();
-        if (const auto*mousePressed = event->getIf<sf::Event::MouseButtonPressed>()) {
-            if (mousePressed->button == sf::Mouse::Button::Left) {
-                for (int i = enemies.size() - 1; i >= 0; i--) {
-                    if (enemies[i].isClicked(mousePressed->position.x, mousePressed->position.y)) {
-                        enemies.erase(enemies.begin() + i);
-                        player.addScore(POINTS_PER_KILL);
-                        audio.playClick();
-                        break;
->>>>>>> Stashed changes
                     }
                 }
             }
         }
-
         // Spawn enemies implement
         if (spawnClock.getElapsedTime().asSeconds() > spawnInterval) {
             int side = randomInt(0, 3);
@@ -97,8 +82,6 @@ int main() {
                 startX = SCREEN_WIDTH + 20;
                 startY = randomInt(0, SCREEN_HEIGHT);
             }
-<<<<<<< Updated upstream
-
             // Temporary fast enemy spawning logic for testing.
             bool fastEnemy = (randomInt(1, FAST_ENEMY_SPAWN_CHANCE) == 1);
             float enemySpeed = ENEMY_BASE_SPEED * 60.0f;
@@ -109,9 +92,6 @@ int main() {
             }
 
             enemies.push_back(Enemy(startX, startY, enemySpeed, enemyTexture, type));
-=======
-            enemies.push_back(Enemy(startX, startY, ENEMY_BASE_SPEED * 60.0f, enemyTexture));
->>>>>>> Stashed changes
             spawnClock.restart();
         }
 
