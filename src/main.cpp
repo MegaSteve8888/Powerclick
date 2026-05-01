@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include "UI.h"
 #include "House.hpp"
 #include "Player.hpp"
 #include "Constant.hpp"
@@ -17,6 +18,8 @@ int main() {
     //scale the background to fill the window
     bgSprite.setScale(sf::Vector2f((float)SCREEN_WIDTH / bgTexture.getSize().x, (float)SCREEN_HEIGHT / bgTexture.getSize().y));
 
+    UI ui;
+    int gameState = 0;
     House house;
     Player player;
     AudioManager audio;
