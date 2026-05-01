@@ -7149,6 +7149,7 @@ CMakeFiles/Powerclick.dir/src/main.cpp.o: /Users/chenyu/Desktop/Powerclick/src/m
   /Users/chenyu/Desktop/Powerclick/include/Enemy.h \
   /Users/chenyu/Desktop/Powerclick/include/House.hpp \
   /Users/chenyu/Desktop/Powerclick/include/Player.hpp \
+  /Users/chenyu/Desktop/Powerclick/include/UI.h \
   /Users/chenyu/Desktop/Powerclick/include/Utilities.hpp \
   /opt/homebrew/include/SFML/Audio.hpp \
   /opt/homebrew/include/SFML/Audio/AudioResource.hpp \
