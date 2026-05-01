@@ -55,8 +55,31 @@ void Game::processEvents()
 
 void Game::spawnEnemy()
 {
-    float y = static_cast<float>(rand() % 600 + 50);
-    m_enemies.emplace_back(0.f, y, 100.f);
+    int side = rand() % 4;
+    float startX, startY;
+
+    if (side == 0)
+    {
+        startX = -20;
+        startY = rand() % 700;
+    }
+    else if (side == 1)
+    {
+        startX = 1020;
+        startY = rand() % 700;
+    }
+    else if (side == 2)
+    {
+        startX = rand() % 1000;
+        startY = -20;
+    }
+    else
+    {
+        startX = rand() % 1000;
+        startY = 720;
+    }
+
+    m_enemies.emplace_back(startX, startY, m_enemySpeed);
 }
 
 void Game::update(float dt)
@@ -64,12 +87,26 @@ void Game::update(float dt)
     if (m_state != GameState::Playing)
         return;
 
-    m_spawnTimer += dt;
+    // 🎯 Difficulty scaling
+    m_difficultyTimer += dt;
 
-    if (m_spawnTimer > 1.5f)
+    if (m_difficultyTimer > 10.f)
+    {
+        m_difficultyTimer = 0.f;
+
+        m_enemySpeed += 20.f;
+
+        if (m_spawnInterval > 0.5f)
+            m_spawnInterval -= 0.2f;
+
+        std::cout << "Difficulty increased!\n";
+    }
+
+    // Spawn enemies
+    if (m_spawnClock.getElapsedTime().asSeconds() > m_spawnInterval)
     {
         spawnEnemy();
-        m_spawnTimer = 0.f;
+        m_spawnClock.restart();
     }
 
     sf::Vector2f housePosition(900.f, 350.f);
@@ -77,7 +114,7 @@ void Game::update(float dt)
     for (auto& e : m_enemies)
         e.update(dt, housePosition);
 
-    // Check if enemies reach house
+    // Enemy reaches target
     for (auto it = m_enemies.begin(); it != m_enemies.end(); )
     {
         if (it->hasReachedTarget(housePosition))
@@ -107,7 +144,9 @@ void Game::handleMousePressed(sf::Mouse::Button button, int x, int y)
             if (it->isClicked(x, y))
             {
                 it = m_enemies.erase(it);
-                m_score += 10;
+
+                // ⭐ Score scales with difficulty
+                m_score += static_cast<int>(10 + m_enemySpeed / 20);
             }
             else
             {
@@ -134,6 +173,11 @@ void Game::handleKeyPressed(sf::Keyboard::Key key)
             m_score = 0;
             m_lives = 3;
             m_enemies.clear();
+
+            // reset difficulty
+            m_enemySpeed = 100.f;
+            m_spawnInterval = 1.5f;
+            m_difficultyTimer = 0.f;
         }
     }
 }
