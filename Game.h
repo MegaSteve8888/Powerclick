@@ -4,7 +4,6 @@
 #include "Enemy.h"
 #include "UI.h"
 
-// Game states
 enum class GameState
 {
     Menu,
@@ -40,7 +39,12 @@ private:
     int m_score = 0;
     int m_lives = 3;
 
-    float m_spawnTimer = 0.f;
+    // ⬇️ Difficulty system
+    float m_difficultyTimer = 0.f;
+    float m_spawnInterval = 1.5f;
+    float m_enemySpeed = 100.f;
+
+    sf::Clock m_spawnClock;
 
     bool m_paused = false;
     sf::Vector2i m_mousePos{0, 0};
