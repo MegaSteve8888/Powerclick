@@ -142,10 +142,24 @@ CMakeFiles/Powerclick.dir/src/Player.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Powerclick.dir/src/Player.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/chenyu/Desktop/Powerclick/src/Player.cpp -o CMakeFiles/Powerclick.dir/src/Player.cpp.s
 
+CMakeFiles/Powerclick.dir/src/UI.cpp.o: CMakeFiles/Powerclick.dir/flags.make
+CMakeFiles/Powerclick.dir/src/UI.cpp.o: /Users/chenyu/Desktop/Powerclick/src/UI.cpp
+CMakeFiles/Powerclick.dir/src/UI.cpp.o: CMakeFiles/Powerclick.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/chenyu/Desktop/Powerclick/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Powerclick.dir/src/UI.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Powerclick.dir/src/UI.cpp.o -MF CMakeFiles/Powerclick.dir/src/UI.cpp.o.d -o CMakeFiles/Powerclick.dir/src/UI.cpp.o -c /Users/chenyu/Desktop/Powerclick/src/UI.cpp
+
+CMakeFiles/Powerclick.dir/src/UI.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Powerclick.dir/src/UI.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/chenyu/Desktop/Powerclick/src/UI.cpp > CMakeFiles/Powerclick.dir/src/UI.cpp.i
+
+CMakeFiles/Powerclick.dir/src/UI.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Powerclick.dir/src/UI.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/chenyu/Desktop/Powerclick/src/UI.cpp -o CMakeFiles/Powerclick.dir/src/UI.cpp.s
+
 CMakeFiles/Powerclick.dir/src/Utilities.cpp.o: CMakeFiles/Powerclick.dir/flags.make
 CMakeFiles/Powerclick.dir/src/Utilities.cpp.o: /Users/chenyu/Desktop/Powerclick/src/Utilities.cpp
 CMakeFiles/Powerclick.dir/src/Utilities.cpp.o: CMakeFiles/Powerclick.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/chenyu/Desktop/Powerclick/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Powerclick.dir/src/Utilities.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/chenyu/Desktop/Powerclick/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Powerclick.dir/src/Utilities.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Powerclick.dir/src/Utilities.cpp.o -MF CMakeFiles/Powerclick.dir/src/Utilities.cpp.o.d -o CMakeFiles/Powerclick.dir/src/Utilities.cpp.o -c /Users/chenyu/Desktop/Powerclick/src/Utilities.cpp
 
 CMakeFiles/Powerclick.dir/src/Utilities.cpp.i: cmake_force
@@ -159,7 +173,7 @@ CMakeFiles/Powerclick.dir/src/Utilities.cpp.s: cmake_force
 CMakeFiles/Powerclick.dir/src/WaveManager.cpp.o: CMakeFiles/Powerclick.dir/flags.make
 CMakeFiles/Powerclick.dir/src/WaveManager.cpp.o: /Users/chenyu/Desktop/Powerclick/src/WaveManager.cpp
 CMakeFiles/Powerclick.dir/src/WaveManager.cpp.o: CMakeFiles/Powerclick.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/chenyu/Desktop/Powerclick/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Powerclick.dir/src/WaveManager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/chenyu/Desktop/Powerclick/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Powerclick.dir/src/WaveManager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Powerclick.dir/src/WaveManager.cpp.o -MF CMakeFiles/Powerclick.dir/src/WaveManager.cpp.o.d -o CMakeFiles/Powerclick.dir/src/WaveManager.cpp.o -c /Users/chenyu/Desktop/Powerclick/src/WaveManager.cpp
 
 CMakeFiles/Powerclick.dir/src/WaveManager.cpp.i: cmake_force
@@ -173,7 +187,7 @@ CMakeFiles/Powerclick.dir/src/WaveManager.cpp.s: cmake_force
 CMakeFiles/Powerclick.dir/src/main.cpp.o: CMakeFiles/Powerclick.dir/flags.make
 CMakeFiles/Powerclick.dir/src/main.cpp.o: /Users/chenyu/Desktop/Powerclick/src/main.cpp
 CMakeFiles/Powerclick.dir/src/main.cpp.o: CMakeFiles/Powerclick.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/chenyu/Desktop/Powerclick/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Powerclick.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/chenyu/Desktop/Powerclick/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Powerclick.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Powerclick.dir/src/main.cpp.o -MF CMakeFiles/Powerclick.dir/src/main.cpp.o.d -o CMakeFiles/Powerclick.dir/src/main.cpp.o -c /Users/chenyu/Desktop/Powerclick/src/main.cpp
 
 CMakeFiles/Powerclick.dir/src/main.cpp.i: cmake_force
@@ -191,6 +205,7 @@ Powerclick_OBJECTS = \
 "CMakeFiles/Powerclick.dir/src/Game.cpp.o" \
 "CMakeFiles/Powerclick.dir/src/House.cpp.o" \
 "CMakeFiles/Powerclick.dir/src/Player.cpp.o" \
+"CMakeFiles/Powerclick.dir/src/UI.cpp.o" \
 "CMakeFiles/Powerclick.dir/src/Utilities.cpp.o" \
 "CMakeFiles/Powerclick.dir/src/WaveManager.cpp.o" \
 "CMakeFiles/Powerclick.dir/src/main.cpp.o"
@@ -203,6 +218,7 @@ Powerclick: CMakeFiles/Powerclick.dir/src/Enemy.cpp.o
 Powerclick: CMakeFiles/Powerclick.dir/src/Game.cpp.o
 Powerclick: CMakeFiles/Powerclick.dir/src/House.cpp.o
 Powerclick: CMakeFiles/Powerclick.dir/src/Player.cpp.o
+Powerclick: CMakeFiles/Powerclick.dir/src/UI.cpp.o
 Powerclick: CMakeFiles/Powerclick.dir/src/Utilities.cpp.o
 Powerclick: CMakeFiles/Powerclick.dir/src/WaveManager.cpp.o
 Powerclick: CMakeFiles/Powerclick.dir/src/main.cpp.o
@@ -212,7 +228,7 @@ Powerclick: /opt/homebrew/lib/libsfml-window.3.0.2.dylib
 Powerclick: /opt/homebrew/lib/libsfml-audio.3.0.2.dylib
 Powerclick: /opt/homebrew/lib/libsfml-system.3.0.2.dylib
 Powerclick: CMakeFiles/Powerclick.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/chenyu/Desktop/Powerclick/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable Powerclick"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/chenyu/Desktop/Powerclick/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable Powerclick"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Powerclick.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

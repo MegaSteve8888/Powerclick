@@ -249,6 +249,30 @@ src/Player.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/src/Player.cpp.s
 .PHONY : src/Player.cpp.s
 
+src/UI.o: src/UI.cpp.o
+.PHONY : src/UI.o
+
+# target to build an object file
+src/UI.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/src/UI.cpp.o
+.PHONY : src/UI.cpp.o
+
+src/UI.i: src/UI.cpp.i
+.PHONY : src/UI.i
+
+# target to preprocess a source file
+src/UI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/src/UI.cpp.i
+.PHONY : src/UI.cpp.i
+
+src/UI.s: src/UI.cpp.s
+.PHONY : src/UI.s
+
+# target to generate assembly for a file
+src/UI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Powerclick.dir/build.make CMakeFiles/Powerclick.dir/src/UI.cpp.s
+.PHONY : src/UI.cpp.s
+
 src/Utilities.o: src/Utilities.cpp.o
 .PHONY : src/Utilities.o
 
@@ -345,6 +369,9 @@ help:
 	@echo "... src/Player.o"
 	@echo "... src/Player.i"
 	@echo "... src/Player.s"
+	@echo "... src/UI.o"
+	@echo "... src/UI.i"
+	@echo "... src/UI.s"
 	@echo "... src/Utilities.o"
 	@echo "... src/Utilities.i"
 	@echo "... src/Utilities.s"
