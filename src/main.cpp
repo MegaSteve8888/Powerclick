@@ -65,8 +65,19 @@ int main() {
 
         // game over state
         if (gameState == 2) {
+            ui.updateFinalScore(player.getScore());
             while (auto event = window.pollEvent()) {
                 if (event->is<sf::Event::Closed>())window.close();
+                if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
+                    if (keyPressed->code == sf::Keyboard::Key::R) {
+                        Player.reset();
+                        enemies.clear();
+                        gameState = 1;
+                    }
+                    if (keyPressed->code == sf::Keyboard::Key::Q) {
+                        window.close();
+                    }
+                }
             }
             window.clear(sf::Color(30, 30, 50));
             window.draw(bgSprite);
