@@ -1,7 +1,7 @@
 #include "UI.h"
 #include <iostream>
 
-UI::UI(): m_font("assets/fonts/arial.ttf"), m_scoreText(m_font), m_livesText(m_font), m_titleText(m_font), m_startText(m_font), m_gameOverText(m_font), m_finalScoreText(m_font), m_restartText(m_font)
+UI::UI(): m_font("assets/fonts/arial.ttf"), m_scoreText(m_font), m_livesText(m_font), m_titleText(m_font), m_startText(m_font), m_difficultyText(m_font), m_gameOverText(m_font), m_finalScoreText(m_font), m_restartText(m_font)
 {
 
     // HUD text
@@ -22,10 +22,15 @@ UI::UI(): m_font("assets/fonts/arial.ttf"), m_scoreText(m_font), m_livesText(m_f
     m_titleText.setFillColor(sf::Color::Yellow);
     m_titleText.setPosition(sf::Vector2f(300.f, 150.f));
 
-    m_startText.setString("Press ENTER to Start");
+    m_startText.setString("Select Difficulty");
     m_startText.setCharacterSize(25);
     m_startText.setFillColor(sf::Color::White);
-    m_startText.setPosition(sf::Vector2f(320.f, 300.f));
+    m_startText.setPosition(sf::Vector2f(420.f, 300.f));
+
+    m_difficultyText.setString("Press N for Normal | Press H for Hard");
+    m_difficultyText.setCharacterSize(22);
+    m_difficultyText.setFillColor(sf::Color(200, 230, 255));
+    m_difficultyText.setPosition(sf::Vector2f(330.f, 350.f));
 
     // Game Over
   
@@ -51,7 +56,7 @@ void UI::updateScore(int score)
     m_scoreText.setString("Score: " + std::to_string(score));
 }
 
-void updateFinalScore(int score) {
+void UI::updateFinalScore(int score) {
     m_finalScoreText.setString("Final Score: " + std::to_string(score));
 }
 
@@ -70,6 +75,7 @@ void UI::drawMainMenu(sf::RenderWindow& window)
 {
     window.draw(m_titleText);
     window.draw(m_startText);
+    window.draw(m_difficultyText);
 }
 
 void UI::drawGameOver(sf::RenderWindow& window)

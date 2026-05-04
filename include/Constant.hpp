@@ -21,6 +21,8 @@ const float HOUSE_Y = (SCREEN_HEIGHT - HOUSE_HEIGHT) / 2.0f;
 const float ENEMY_SIZE = 30.0f;
 const float ENEMY_BASE_SPEED = 1.5f;
 const float ENEMY_SPEED_INCREMENT = 0.2f;
+const float ENEMY_BASE_HEALTH = 2.0f;
+const float PLAYER_CLICK_DAMAGE = 2.0f;
 // Temporary fast enemy tuning values - adjust or remove once fast enemy design is finalized.
 const float FAST_ENEMY_SPEED_MULTIPLIER = 1.8f;
 const int MAX_ENEMIES = 20;
@@ -31,5 +33,10 @@ const int FAST_ENEMY_SPAWN_CHANCE = 5; // one in five enemies is fast
 const int ENEMIES_PER_WAVE_BASE = 3;
 const int ENEMIES_PER_WAVE_INCREMENT = 2;
 const float SPAWN_INTERVAL = 1.5f;
+
+// difficulty tuning
+const float HARD_ENEMY_SPEED_MULTIPLIER = 1.25f;
+const float HARD_ENEMY_HEALTH_MULTIPLIER = 1.5f;
+const float HARD_SPAWN_INTERVAL_MULTIPLIER = 0.75f;
 
 #endif

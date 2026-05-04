@@ -25,6 +25,7 @@ private:
     // Screens
     sf::Text m_titleText;
     sf::Text m_startText;
+    sf::Text m_difficultyText;
     sf::Text m_gameOverText;
     sf::Text m_finalScoreText;
     sf::Text m_restartText;
