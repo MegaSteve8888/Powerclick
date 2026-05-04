@@ -33,6 +33,17 @@ UI::UI(): m_font("assets/fonts/arial.ttf"), m_scoreText(m_font), m_livesText(m_f
     m_gameOverText.setCharacterSize(50);
     m_gameOverText.setFillColor(sf::Color::Red);
     m_gameOverText.setPosition(sf::Vector2f(320.f, 250.f));
+
+    // final score
+    
+    m_finalScoreText.setCharacterSize(30);
+    m_finalScoreText.setFillColor(sf::Color::white);
+    m_finalScoreText.setPosition(sf::Vector2f(SCREEN_WIDTH / 2.0f - 100.f, 350.f));
+
+    m_restartText.setString("Press R to Restart | Press Q to Quit");
+    m_restartText.setCharacterSize(22);
+    m_restartText.setFillColor(sf::Color(200, 230, 255));
+    m_restartText.setPosition(sf::Vector2f(SCREEN_WIDTH / 2.0f - 250.f, 450.f));
 }
 
 void UI::updateScore(int score)
