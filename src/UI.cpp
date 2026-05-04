@@ -1,7 +1,7 @@
 #include "UI.h"
 #include <iostream>
 
-UI::UI(): m_font("assets/fonts/arial.ttf"), m_scoreText(m_font), m_livesText(m_font), m_titleText(m_font), m_startText(m_font), m_gameOverText(m_font)
+UI::UI(): m_font("assets/fonts/arial.ttf"), m_scoreText(m_font), m_livesText(m_font), m_titleText(m_font), m_startText(m_font), m_gameOverText(m_font), m_finalScoreText(m_font), m_restartText(m_font)
 {
 
     // HUD text
