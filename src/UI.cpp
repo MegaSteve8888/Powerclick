@@ -75,4 +75,6 @@ void UI::drawMainMenu(sf::RenderWindow& window)
 void UI::drawGameOver(sf::RenderWindow& window)
 {
     window.draw(m_gameOverText);
+    window.draw(m_finalScoreText);
+    window.draw(m_restartText);
 }
