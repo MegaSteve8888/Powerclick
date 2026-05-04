@@ -48,6 +48,31 @@ int main() {
     while (window.isOpen()) {
 //Updated upstream
         float dt = gameClock.restart().asSeconds();
+        // menu state
+        if (gameState == 0) {
+            while (auto event = window.pollEvent()) {
+                if (event->is<sf::Event::Closed>())window.close();
+                if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
+                    if (keyPressed->code == sf::Keyboard::Key::Enter) gameState = 1;
+                }
+            }
+            window.clear(sf::Color(30, 30, 50));
+            window.draw(bgSprite);
+            ui.drawMainMenu(window);
+            window.display();
+            continue;
+        }
+
+        // game over state
+        if (gameState == 2) {
+            while (auto event = window.pollEvent()) {
+                if (event->is<sf::Event::Closed>())window.close();
+            }
+            window.clear(sf::Color(30, 30, 50));
+            window.draw(bgSprite);
+            ui.drawGameOver(window);
+            continue;
+        }
       
         while (auto event = window.pollEvent()) {
             if (event->is<sf::Event::Closed>())
@@ -112,7 +137,7 @@ int main() {
         // Check game over
         if (!player.isAlive()) {
             audio.playGameOver();
-            break;
+            gameState = 2;
         }
 
         // Draw
