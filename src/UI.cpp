@@ -51,6 +51,10 @@ void UI::updateScore(int score)
     m_scoreText.setString("Score: " + std::to_string(score));
 }
 
+void updateFinalScore(int score) {
+    m_finalScoreText.setString("Final Score: " + std::to_string(score));
+}
+
 void UI::updateLives(int lives)
 {
     m_livesText.setString("Lives: " + std::to_string(lives));

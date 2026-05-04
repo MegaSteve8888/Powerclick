@@ -13,6 +13,7 @@ public:
     void drawHUD(sf::RenderWindow& window);
     void drawMainMenu(sf::RenderWindow& window);
     void drawGameOver(sf::RenderWindow& window);
+    void updateFinalScore(int score);
 
 private:
     sf::Font m_font;
