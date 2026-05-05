@@ -50,4 +50,10 @@ private:
     sf::Sprite m_mainmenuSprite;
     sf::Texture m_quitGoTex;
     sf::Sprite m_quitGoSprite;
+
+    //high score
+    sf::Texture m_highscoreTitleTex;
+    sf::Sprite m_highscoreTitleSprite;
+    sf::Texture m_backTex;
+    sf::Sprite m_backSprite;
 };

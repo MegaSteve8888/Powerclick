@@ -9,6 +9,7 @@
 #include <vector>
 #include <ctime>
 #include <string>
+#include <fstream>
 
 int main() {
     enum class Difficulty {
@@ -25,6 +26,12 @@ int main() {
 
     UI ui;
     int gameState = 0;
+    int highScore = 0;
+    std::ifstream inFile("highscore.txt");
+    if (inFile.is_open()) {
+        inFile >> highScore;
+        inFile.close();
+    }
     House house;
     Player player;
     AudioManager audio;
@@ -58,17 +65,12 @@ int main() {
         if (gameState == 0) {
             while (auto event = window.pollEvent()) {
                 if (event->is<sf::Event::Closed>())window.close();
-                if (const auto* MousePressed = event->getIf<sf::Event::MouseButtonPressed>()) {
-                    if (MousePressed->button == sf::Mouse::Button::Left) {
-                       int btn = ui.checkMainMenuClick(mousePressed->position.y);
+                if (const auto* mousePressed = event->getIf<sf::Event::MouseButtonPressed>()) {
+                    if (mousePressed->button == sf::Mouse::Button::Left) {
+                       int btn = ui.checkMainMenuClick(mousePressed->position.x, mousePressed->position.y);
                        if (btn == 1) gameState = 1;
+                       if (btn == 2) gameState = 3;
                        if (btn == 3) window.close();
-                    }
-                    if (keyPressed->code == sf::Keyboard::Key::H) {
-                        difficulty = Difficulty::Hard;
-                        spawnInterval = SPAWN_INTERVAL * HARD_SPAWN_INTERVAL_MULTIPLIER;
-                        spawnClock.restart();
-                        gameState = 1;
                     }
                 }
             }
@@ -78,13 +80,51 @@ int main() {
             window.display();
             continue;
         }
+        // high score state
+        if (gameState == 3) {
+            while (auto event = window.pollEvent()) {
+                if (event->is<sf::Event::Closed>()) window.close();
+                if (const auto* mousePressed = event->getIf<sf::Event::MouseButtonPressed>()) {
+                    gameState = 0;
+                }
+            }
+        window.clear(sf::Color(30, 30, 50));
+        window.draw(bgSprite);
+
+        sf::Text highScoreTitle(font);
+        highScoreTitle.setString("HIGH SCORE");
+        highScoreTitle.setCharacterSize(50);
+        highScoreTitle.setFillColor(sf::Color::Yellow);
+        highScoreTitle.setPosition(sf::Vector2f(450.0f, 200.0f));
+
+        sf::Text highScoreValue(font);
+        highScoreValue.setString ("Best: " + std::to_string(highScore));
+        highScoreValue.setCharacterSize(30);
+        highScoreValue.setFillColor(sf::Color::White);
+        highScoreValue.setPosition(sf::Vector2f(420.0f, 500.0f));
+
+        sf::Text backText(font);
+        backText.setString("Click anywhere to go back");
+        backText.setCharacterSize(20);
+        backText.setFillColor(sf::Color(200, 200, 200));
+        backText.setPosition(sf::Vector2f(420.0f, 500.0f));
+
+        window.draw(highScoreTitle);
+        window.draw(highScoreValue);
+        window.draw(backText);
+        window.display();
+        continue;
+    }
+
+
+
 
         // game over state
         if (gameState == 2) {
             ui.updateFinalScore(player.getScore());
             while (auto event = window.pollEvent()) {
                 if (event->is<sf::Event::Closed>())window.close();
-                if (const auto* MousePressed = event->getIf<sf::Event::MouseButtonPressed>()) {
+                if (const auto* mousePressed = event->getIf<sf::Event::MouseButtonPressed>()) {
                     if (mousePressed->button == sf::Mouse::Button::Left) {
                         int btn = ui.checkGameOverClick(mousePressed->position.x, mousePressed->position.y);
                         if (btn == 1) {
@@ -100,6 +140,7 @@ int main() {
             window.clear(sf::Color(30, 30, 50));
             window.draw(bgSprite);
             ui.drawGameOver(window);
+            window.display();
             continue;
         }
       
@@ -175,6 +216,14 @@ int main() {
 
         // Check game over
         if (!player.isAlive()) {
+            if (player.getScore() > highScore) {
+                highScore = player.getScore();
+                std::ofstream outFile("highscore.txt");
+                if (outFile.is_open()) {
+                    outFile << highScore;
+                    outFile.close();
+                }
+            }
             audio.playGameOver();
             gameState = 2;
         }
