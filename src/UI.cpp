@@ -58,6 +58,19 @@ UI::UI(): m_font("assets/fonts/arial.ttf"), m_scoreText(m_font), m_livesText(m_f
     m_restartText.setCharacterSize(22);
     m_restartText.setFillColor(sf::Color(200, 230, 255));
     m_restartText.setPosition(sf::Vector2f(SCREEN_WIDTH / 2.0f - 250.f, 450.f));
+
+    // button position(center of screen)
+    
+    float centerX = SCREEN_WIDTH / 2.0f - 150.0f;
+    m_titleSprite.setPosition(sf::Vector2f(SCREEN_WIDTH / 2.0f - 200.0f, 100.0f));
+    m_playSprite.setPosition(sf::Vector2f(centerX, 280.0f));
+    m_highscoreSprite.setPosition(sf::Vector2f(centerX, 360.0f));
+    m_quitSprite.setPosition(sf::Vector2f(centerX, 440.0f));
+
+    m_gameoverSprite.setPosition(sf::Vector2f(SCREEN_WIDTH / 2.0f - 200.0f, 100.0f));
+    m_restartBthnSprite.setPosition(sf::Vector2f(centerX, 320.0f));
+    m_mainmenuSprite.setPosition(sf::Vector2f(centerX, 400.0f));
+    m_quitGoSprite.setPosition(sf::Vector2f(centerX, 480.f));
 }
 
 void UI::updateScore(int score)
