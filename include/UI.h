@@ -57,4 +57,12 @@ private:
     sf::Sprite m_highscoreTitleSprite;
     sf::Texture m_backTex;
     sf::Sprite m_backSprite;
+
+    // normal mode and difficult mode choose
+    sf::Texture m_diffTitleTex;
+    sf::Sprite m_diffTitleSprite;
+    sf::Texture m_normalTex;
+    sf::Sprite m_normalSprite;
+    sf::Texture m_hardTex;
+    sf::Sprite m_hardSprite;
 };
