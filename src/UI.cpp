@@ -10,7 +10,8 @@ UI::UI(): m_font("assets/fonts/arial.ttf"), m_scoreText(m_font), m_livesText(m_f
      m_highscoreSprite(m_highscoreTex), m_quitTex("assets/sprites/btn_quit.png"), m_quitSprite(m_quitTex),
       m_gameoverTex("assets/sprites/btn_gameover.png"), m_gameoverSprite(m_gameoverTex), m_restartBtnTex("assets/sprites/btn_restart.png"),
        m_restartBtnSprite(m_restartBtnTex), m_mainmenuTex("assets/sprites/btn_mainmenu.png"), m_mainmenuSprite(m_mainmenuTex),
-        m_quitGoTex("assets/sprites/btn_quit_go.png"), m_quitGoSprite(m_quitGoTex)
+        m_quitGoTex("assets/sprites/btn_quit_go.png"), m_quitGoSprite(m_quitGoTex), m_highscoreTitleTex("assets/sprites/btn_highscore_title.png"),
+         m_highscoreTitleSprite(m_highscoreTitleTex), m_backTex("assets/sprites/btn_back.png"), m_backSprite(m_backTex), 
 {
 
     // HUD text
@@ -71,6 +72,11 @@ UI::UI(): m_font("assets/fonts/arial.ttf"), m_scoreText(m_font), m_livesText(m_f
     m_restartBtnSprite.setPosition(sf::Vector2f(centerX, 320.0f));
     m_mainmenuSprite.setPosition(sf::Vector2f(centerX, 400.0f));
     m_quitGoSprite.setPosition(sf::Vector2f(centerX, 480.f));
+
+    //high score button
+    m_highscoreTitleSprite.setPosition(sf::Vector2f(SCREEN_WIDTH / 2.0f - 200.0f, 150.0f));
+    m_quitGoSprite.setPosition(sf::Vector2f(SCREEN_WIDTH / 2.0f - 150.0f, 500.0f));
+
 }
 
 void UI::updateScore(int score)
