@@ -85,6 +85,7 @@ UI::UI(): m_font("assets/fonts/arial.ttf"), m_scoreText(m_font), m_livesText(m_f
     m_hardSprite.setPosition(sf::Vector2f(SCREEN_WIDTH / 2.0f - 150.0f, 420.0f));
 
 }
+// draw update score, final score, and lives
 
 void UI::updateScore(int score)
 {
@@ -100,12 +101,15 @@ void UI::updateLives(int lives)
     m_livesText.setString("Lives: " + std::to_string(lives));
 }
 
+//darw score and lives
+
 void UI::drawHUD(sf::RenderWindow& window)
 {
     window.draw(m_scoreText);
     window.draw(m_livesText);
 }
 
+//draw main menu
 void UI::drawMainMenu(sf::RenderWindow& window)
 {
     window.draw(m_titleSprite);
@@ -114,7 +118,7 @@ void UI::drawMainMenu(sf::RenderWindow& window)
     window.draw(m_quitSprite);
 }
 
-
+// draw gameover menu
 void UI::drawGameOver(sf::RenderWindow& window)
 {
     window.draw(m_gameoverSprite);
@@ -124,6 +128,7 @@ void UI::drawGameOver(sf::RenderWindow& window)
     window.draw(m_quitGoSprite);
 }
 
+// set main menu and game over menu click
 int UI::checkMainMenuClick(int mouseX, int mouseY) {
     sf::Vector2f m(static_cast<float>(mouseX), static_cast<float>(mouseY));
     if (m_playSprite.getGlobalBounds().contains(m)) return 1;
@@ -139,7 +144,7 @@ int UI::checkGameOverClick(int mouseX, int mouseY) {
     if (m_quitGoSprite.getGlobalBounds(). contains(m)) return 3;
     return 0;
 }
-
+// draw high score page
 void UI::drawHighScorePage(sf::RenderWindow& window, int highScore) {
     window.draw(m_highscoreTitleSprite);
     sf::Text scoreValue(m_font);
@@ -151,4 +156,19 @@ void UI::drawHighScorePage(sf::RenderWindow& window, int highScore) {
     scoreValue.setPosition(sf::Vector2f(SCREEN_WIDTH / 2.0f - 100.0f, 320.0f));
     window.draw(scoreValue);
     window.draw(m_backSprite);
+}
+
+// draw difficulty mode page and set click
+void UI::drawDifficultyPage(sf::RenderWindow& window)
+{
+    window.draw(m_diffTitleSprite);
+    window.draw(m_normalSprite);
+    window.draw(m_hardSprite);
+}
+
+int UI::checkdifficultyClick(int mouseX, int mouseY) {
+    sf::Vector2f m(static_cast<float>(mouseX), static_cast<float>(mouseY));
+    if (m_normalSprite.getGlobalBounds().contains(m)) return 1;
+    if (m_hardSprite.getGlobalBounds().contains(m)) return 2;
+    return 0;
 }
