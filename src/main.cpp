@@ -11,6 +11,11 @@
 #include <string>
 
 int main() {
+    enum class Difficulty {
+        Normal,
+        Hard
+    };
+
     sf::RenderWindow window(sf::VideoMode({SCREEN_WIDTH, SCREEN_HEIGHT}), GAME_TITLE);
     window.setFramerateLimit(FRAME_RATE);
     sf::Texture bgTexture("assets/sprites/background.png");
@@ -36,7 +41,8 @@ int main() {
     srand(time(0));
     std::vector<Enemy> enemies;
     sf::Clock spawnClock;
-    float spawnInterval = 1.5f;
+    float spawnInterval = SPAWN_INTERVAL;
+    Difficulty difficulty = Difficulty::Normal;
     sf::Clock gameClock;
     sf::Texture enemyTexture("assets/sprites/enemy.png");
 
@@ -53,7 +59,18 @@ int main() {
             while (auto event = window.pollEvent()) {
                 if (event->is<sf::Event::Closed>())window.close();
                 if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
-                    if (keyPressed->code == sf::Keyboard::Key::Enter) gameState = 1;
+                    if (keyPressed->code == sf::Keyboard::Key::N) {
+                        difficulty = Difficulty::Normal;
+                        spawnInterval = SPAWN_INTERVAL;
+                        spawnClock.restart();
+                        gameState = 1;
+                    }
+                    if (keyPressed->code == sf::Keyboard::Key::H) {
+                        difficulty = Difficulty::Hard;
+                        spawnInterval = SPAWN_INTERVAL * HARD_SPAWN_INTERVAL_MULTIPLIER;
+                        spawnClock.restart();
+                        gameState = 1;
+                    }
                 }
             }
             window.clear(sf::Color(30, 30, 50));
@@ -72,6 +89,7 @@ int main() {
                     if (keyPressed->code == sf::Keyboard::Key::R) {
                         player.reset();
                         enemies.clear();
+                        spawnClock.restart();
                         gameState = 1;
                     }
                     if (keyPressed->code == sf::Keyboard::Key::Q) {
@@ -92,9 +110,11 @@ int main() {
                 if (mousePressed->button == sf::Mouse::Button::Left) {
                     for (int i = enemies.size() - 1; i >= 0; i--) {
                         if (enemies[i].isClicked(mousePressed->position.x, mousePressed->position.y)) {
-                            enemies.erase(enemies.begin() + i);
-                            player.addScore(POINTS_PER_KILL);
-                            audio.playClick();
+                            if (enemies[i].takeDamage(PLAYER_CLICK_DAMAGE)) {
+                                enemies.erase(enemies.begin() + i);
+                                player.addScore(POINTS_PER_KILL);
+                                audio.playClick();
+                            }
                             break;
                         }
                     }
@@ -124,13 +144,21 @@ int main() {
             // Temporary fast enemy spawning logic for testing.
             bool fastEnemy = (randomInt(1, FAST_ENEMY_SPAWN_CHANCE) == 1);
             float enemySpeed = ENEMY_BASE_SPEED * 60.0f;
+            if (difficulty == Difficulty::Hard) {
+                enemySpeed *= HARD_ENEMY_SPEED_MULTIPLIER;
+            }
+            float enemyHealth = ENEMY_BASE_HEALTH;
+            if (difficulty == Difficulty::Hard) {
+                enemyHealth *= HARD_ENEMY_HEALTH_MULTIPLIER;
+            }
+
             Enemy::Type type = Enemy::Type::Normal;
             if (fastEnemy) {
                 enemySpeed *= FAST_ENEMY_SPEED_MULTIPLIER;
                 type = Enemy::Type::Fast;
             }
 
-            enemies.push_back(Enemy(startX, startY, enemySpeed, enemyTexture, type));
+            enemies.push_back(Enemy(startX, startY, enemySpeed, enemyTexture, type, enemyHealth));
             spawnClock.restart();
         }
 

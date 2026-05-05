@@ -2,7 +2,8 @@
 #include "Utilities.hpp"
 #include <cmath>
 
-Enemy::Enemy(float startX, float startY, float speed, const sf::Texture& texture, Type type): m_speed(speed), m_sprite(texture), m_type(type)
+Enemy::Enemy(float startX, float startY, float speed, const sf::Texture& texture, Type type, float health)
+    : m_speed(speed), m_health(health), m_sprite(texture), m_type(type)
 {
         // Handle texture load failure if needed
     m_sprite.setPosition(sf::Vector2f(startX, startY));
@@ -11,6 +12,12 @@ Enemy::Enemy(float startX, float startY, float speed, const sf::Texture& texture
     if (m_type == Type::Fast) {
         m_sprite.setColor(sf::Color::Red);
     }
+}
+
+bool Enemy::takeDamage(float damage)
+{
+    m_health -= damage;
+    return m_health <= 0.0f;
 }
 
 void Enemy::update(float dt, sf::Vector2f targetPosition)
