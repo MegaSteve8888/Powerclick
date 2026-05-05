@@ -11,7 +11,7 @@ UI::UI(): m_font("assets/fonts/arial.ttf"), m_scoreText(m_font), m_livesText(m_f
       m_gameoverTex("assets/sprites/btn_gameover.png"), m_gameoverSprite(m_gameoverTex), m_restartBtnTex("assets/sprites/btn_restart.png"),
        m_restartBtnSprite(m_restartBtnTex), m_mainmenuTex("assets/sprites/btn_mainmenu.png"), m_mainmenuSprite(m_mainmenuTex),
         m_quitGoTex("assets/sprites/btn_quit_go.png"), m_quitGoSprite(m_quitGoTex), m_highscoreTitleTex("assets/sprites/btn_highscore_title.png"),
-         m_highscoreTitleSprite(m_highscoreTitleTex), m_backTex("assets/sprites/btn_back.png"), m_backSprite(m_backTex), 
+         m_highscoreTitleSprite(m_highscoreTitleTex), m_backTex("assets/sprites/btn_back.png"), m_backSprite(m_backTex)
 {
 
     // HUD text
@@ -131,4 +131,17 @@ int UI::checkGameOverClick(int mouseX, int mouseY) {
     if (m_mainmenuSprite.getGlobalBounds().contains(m)) return 2;
     if (m_quitGoSprite.getGlobalBounds(). contains(m)) return 3;
     return 0;
+}
+
+void UI::drawHighScorePage(sf::RenderWindow& window, int highScore) {
+    window.draw(m_highscoreTitleSprite);
+    sf::Text scoreValue(m_font);
+    scoreValue.setString("Best: " + std::to_string(highScore));
+    scoreValue.setCharacterSize(40);
+    scoreValue.setFillColor(sf::Color::White);
+    scoreValue.setOutlineColor(sf::Color(100, 70, 20));
+    scoreValue.setOutlineThickness(2.0f);
+    scoreValue.setPosition(sf::Vector2f(SCREEN_WIDTH / 2.0f - 100.0f, 320.0f));
+    window.draw(scoreValue);
+    window.draw(m_backSprite);
 }

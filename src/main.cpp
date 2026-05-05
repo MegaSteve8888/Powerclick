@@ -88,33 +88,13 @@ int main() {
                     gameState = 0;
                 }
             }
-        window.clear(sf::Color(30, 30, 50));
-        window.draw(bgSprite);
+            window.clear(sf::Color(30, 30, 50));
+            window.draw(bgSprite);
 
-        sf::Text highScoreTitle(font);
-        highScoreTitle.setString("HIGH SCORE");
-        highScoreTitle.setCharacterSize(50);
-        highScoreTitle.setFillColor(sf::Color::Yellow);
-        highScoreTitle.setPosition(sf::Vector2f(450.0f, 200.0f));
-
-        sf::Text highScoreValue(font);
-        highScoreValue.setString ("Best: " + std::to_string(highScore));
-        highScoreValue.setCharacterSize(30);
-        highScoreValue.setFillColor(sf::Color::White);
-        highScoreValue.setPosition(sf::Vector2f(420.0f, 500.0f));
-
-        sf::Text backText(font);
-        backText.setString("Click anywhere to go back");
-        backText.setCharacterSize(20);
-        backText.setFillColor(sf::Color(200, 200, 200));
-        backText.setPosition(sf::Vector2f(420.0f, 500.0f));
-
-        window.draw(highScoreTitle);
-        window.draw(highScoreValue);
-        window.draw(backText);
-        window.display();
-        continue;
-    }
+            ui.drawHighScorePage(window, highScore);
+            window.display();
+            continue;
+        }
 
 
 

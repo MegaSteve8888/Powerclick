@@ -43,7 +43,7 @@ void AudioManager::playGameOver() {
 
 void AudioManager::playBGM() {
     if (soundEnabled) {
-        if (bgm.openFromFile(getAssetPath("assets/sounds/bgm.ogg"))) {
+        if (bgm.openFromFile("assets/sounds/bgm.ogg")) {
             bgm.setLooping(true);
             bgm.setVolume(50);
             bgm.play();
