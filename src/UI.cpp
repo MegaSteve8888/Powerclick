@@ -2,7 +2,15 @@
 #include "Constant.hpp"
 #include <iostream>
 
-UI::UI(): m_font("assets/fonts/arial.ttf"), m_scoreText(m_font), m_livesText(m_font), m_titleText(m_font), m_startText(m_font), m_difficultyText(m_font), m_gameOverText(m_font), m_finalScoreText(m_font), m_restartText(m_font)
+UI::UI(): m_font("assets/fonts/arial.ttf"), m_scoreText(m_font), m_livesText(m_font),
+ m_titleText(m_font), m_startText(m_font), m_difficultyText(m_font),
+  m_gameOverText(m_font), m_finalScoreText(m_font), m_restartText(m_font),
+   m_titleTex("assets/sprites/btn_title.png"), m_titleSprite(m_titleTex),
+    m_playTex("assets/sprites/btn_play.png"), m_playSprite(m_playTex), m_highscoreTex("assets/sprites/btn_highscore.png"),
+     m_highscoreSprite(m_highscoreTex), m_quitTex("assets/sprites/btn_quit.png"), m_quitSprite(m_quitTex),
+      m_gameoverTex("assets/sprites/btn_gameover.png"), m_gameoverSprite(m_gameoverTex), m_restartBtnTex("assets/sprites/btn_restart.png"),
+       m_restartBtnSprite(m_restartBtnTex), m_mainmenuTex("assets/sprites/btn_mainmenu.png"), m_mainmenuSprite(m_mainmenuTex),
+        m_quitGoTex("assets/sprites/btn_quit_go.png"), m_quitGoSprite(m_quitGoTex)
 {
 
     // HUD text
