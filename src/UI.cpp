@@ -68,7 +68,7 @@ UI::UI(): m_font("assets/fonts/arial.ttf"), m_scoreText(m_font), m_livesText(m_f
     m_quitSprite.setPosition(sf::Vector2f(centerX, 440.0f));
 
     m_gameoverSprite.setPosition(sf::Vector2f(SCREEN_WIDTH / 2.0f - 200.0f, 100.0f));
-    m_restartBthnSprite.setPosition(sf::Vector2f(centerX, 320.0f));
+    m_restartBtnSprite.setPosition(sf::Vector2f(centerX, 320.0f));
     m_mainmenuSprite.setPosition(sf::Vector2f(centerX, 400.0f));
     m_quitGoSprite.setPosition(sf::Vector2f(centerX, 480.f));
 }
@@ -107,15 +107,15 @@ void UI::drawGameOver(sf::RenderWindow& window)
     window.draw(m_gameoverSprite);
     window.draw(m_finalScoreText);
     window.draw(m_restartBtnSprite);
-    window.draw(m_mainmenuDprite);
+    window.draw(m_mainmenuSprite);
     window.draw(m_quitGoSprite);
 }
 
 int UI::checkMainMenuClick(int mouseX, int mouseY) {
-    sf::Vector2f m(stat9c_cast<float>(mouseX), static_cast<float>(mouseY));
+    sf::Vector2f m(static_cast<float>(mouseX), static_cast<float>(mouseY));
     if (m_playSprite.getGlobalBounds().contains(m)) return 1;
-    if (m_highScoreSprite.getGlobalBounds().contains(m)) return 2;
-    if (m_highScoreSprite.getGlobalBounds(). contains(m)) return 3;
+    if (m_highscoreSprite.getGlobalBounds().contains(m)) return 2;
+    if (m_quitSprite.getGlobalBounds(). contains(m)) return 3;
     return 0;
 }
 
@@ -125,3 +125,4 @@ int UI::checkGameOverClick(int mouseX, int mouseY) {
     if (m_mainmenuSprite.getGlobalBounds().contains(m)) return 2;
     if (m_quitGoSprite.getGlobalBounds(). contains(m)) return 3;
     return 0;
+}

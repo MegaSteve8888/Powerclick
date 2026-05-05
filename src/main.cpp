@@ -58,12 +58,11 @@ int main() {
         if (gameState == 0) {
             while (auto event = window.pollEvent()) {
                 if (event->is<sf::Event::Closed>())window.close();
-                if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
-                    if (keyPressed->code == sf::Keyboard::Key::N) {
-                        difficulty = Difficulty::Normal;
-                        spawnInterval = SPAWN_INTERVAL;
-                        spawnClock.restart();
-                        gameState = 1;
+                if (const auto* MousePressed = event->getIf<sf::Event::MouseButtonPressed>()) {
+                    if (MousePressed->button == sf::Mouse::Button::Left) {
+                       int btn = ui.checkMainMenuClick(mousePressed->position.y);
+                       if (btn == 1) gameState = 1;
+                       if (btn == 3) window.close();
                     }
                     if (keyPressed->code == sf::Keyboard::Key::H) {
                         difficulty = Difficulty::Hard;
