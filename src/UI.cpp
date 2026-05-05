@@ -1,4 +1,5 @@
 #include "UI.h"
+#include "Constant.hpp"
 #include <iostream>
 
 UI::UI(): m_font("assets/fonts/arial.ttf"), m_scoreText(m_font), m_livesText(m_font), m_titleText(m_font), m_startText(m_font), m_gameOverText(m_font), m_finalScoreText(m_font), m_restartText(m_font)
@@ -37,7 +38,7 @@ UI::UI(): m_font("assets/fonts/arial.ttf"), m_scoreText(m_font), m_livesText(m_f
     // final score
     
     m_finalScoreText.setCharacterSize(30);
-    m_finalScoreText.setFillColor(sf::Color::white);
+    m_finalScoreText.setFillColor(sf::Color::White);
     m_finalScoreText.setPosition(sf::Vector2f(SCREEN_WIDTH / 2.0f - 100.f, 350.f));
 
     m_restartText.setString("Press R to Restart | Press Q to Quit");
@@ -51,7 +52,7 @@ void UI::updateScore(int score)
     m_scoreText.setString("Score: " + std::to_string(score));
 }
 
-void updateFinalScore(int score) {
+void UI::updateFinalScore(int score) {
     m_finalScoreText.setString("Final Score: " + std::to_string(score));
 }
 

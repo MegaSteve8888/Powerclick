@@ -13,6 +13,8 @@ public:
     void drawHUD(sf::RenderWindow& window);
     void drawMainMenu(sf::RenderWindow& window);
     void drawGameOver(sf::RenderWindow& window);
+    int checkMainMenuClick(int mouseX, int mouseY);
+    int checkGameOverClick(int mouseX, int mouseY);
     void updateFinalScore(int score);
 
 private:
