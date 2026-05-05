@@ -110,3 +110,18 @@ void UI::drawGameOver(sf::RenderWindow& window)
     window.draw(m_mainmenuDprite);
     window.draw(m_quitGoSprite);
 }
+
+int UI::checkMainMenuClick(int mouseX, int mouseY) {
+    sf::Vector2f m(stat9c_cast<float>(mouseX), static_cast<float>(mouseY));
+    if (m_playSprite.getGlobalBounds().contains(m)) return 1;
+    if (m_highScoreSprite.getGlobalBounds().contains(m)) return 2;
+    if (m_highScoreSprite.getGlobalBounds(). contains(m)) return 3;
+    return 0;
+}
+
+int UI::checkGameOverClick(int mouseX, int mouseY) {
+    sf::Vector2f m(static_cast<float>(mouseX), static_cast<float>(mouseY));
+    if (m_restartBtnSprite.getGlobalBounds().contains(m)) return 1;
+    if (m_mainmenuSprite.getGlobalBounds().contains(m)) return 2;
+    if (m_quitGoSprite.getGlobalBounds(). contains(m)) return 3;
+    return 0;
