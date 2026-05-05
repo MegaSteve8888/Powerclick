@@ -17,6 +17,8 @@ public:
     int checkGameOverClick(int mouseX, int mouseY);
     void updateFinalScore(int score);
     void drawHighScorePage(sf::RenderWindow& window, int highScore);
+    void drawDifficultyPage(sf::RenderWindow& window);
+    int checkDifficultyClick(int mouseX, int mouseY);
 
 private:
     sf::Font m_font;
