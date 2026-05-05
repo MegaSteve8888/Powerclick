@@ -31,4 +31,23 @@ private:
     sf::Text m_gameOverText;
     sf::Text m_finalScoreText;
     sf::Text m_restartText;
+
+    // button textures and sprites
+    sf::Texture m_titleTex;
+    sf::Sprite m_titleSprite;
+    sf::Texture m_playTex;
+    sf::Sprite m_playSprite;
+    sf::Texture m_highscoreTex;
+    sf::Sprite m_highscoreSprite;
+    sf::Texture m_quitTex;
+    sf::Sprite m_quitSprite;
+
+    sf::Texture m_gameoverTex;
+    sf::Sprite m_gameoverSprite;
+    sf::Texture m_restartBtnTex;
+    sf::Sprite m_restartBtnSprite;
+    sf::Texture m_mainmenuTex;
+    sf::Sprite m_mainmenuSprite;
+    sf::Texture m_quitGoTex;
+    sf::Sprite m_quitGoSprite;
 };
