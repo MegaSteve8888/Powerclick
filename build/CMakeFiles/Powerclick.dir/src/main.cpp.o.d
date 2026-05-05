@@ -922,4 +922,5 @@ CMakeFiles/Powerclick.dir/src/main.cpp.o: \
   /opt/homebrew/include/SFML/Audio/SoundBufferRecorder.hpp \
   /opt/homebrew/include/SFML/Audio/SoundRecorder.hpp \
   /opt/homebrew/include/SFML/Audio/SoundFileFactory.hpp \
-  /opt/homebrew/include/SFML/Audio/SoundFileFactory.inl
+  /opt/homebrew/include/SFML/Audio/SoundFileFactory.inl \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream
