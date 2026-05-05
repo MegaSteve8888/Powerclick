@@ -95,14 +95,18 @@ void UI::drawHUD(sf::RenderWindow& window)
 
 void UI::drawMainMenu(sf::RenderWindow& window)
 {
-    window.draw(m_titleText);
-    window.draw(m_startText);
-    window.draw(m_difficultyText);
+    window.draw(m_titleSprite);
+    window.draw(m_playSprite);
+    window.draw(m_highscoreSprite);
+    window.draw(m_quitSprite);
 }
+
 
 void UI::drawGameOver(sf::RenderWindow& window)
 {
-    window.draw(m_gameOverText);
+    window.draw(m_gameoverSprite);
     window.draw(m_finalScoreText);
-    window.draw(m_restartText);
+    window.draw(m_restartBtnSprite);
+    window.draw(m_mainmenuDprite);
+    window.draw(m_quitGoSprite);
 }
