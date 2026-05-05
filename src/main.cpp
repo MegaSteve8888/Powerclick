@@ -84,15 +84,16 @@ int main() {
             ui.updateFinalScore(player.getScore());
             while (auto event = window.pollEvent()) {
                 if (event->is<sf::Event::Closed>())window.close();
-                if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
-                    if (keyPressed->code == sf::Keyboard::Key::R) {
-                        player.reset();
-                        enemies.clear();
-                        spawnClock.restart();
-                        gameState = 1;
-                    }
-                    if (keyPressed->code == sf::Keyboard::Key::Q) {
-                        window.close();
+                if (const auto* MousePressed = event->getIf<sf::Event::MouseButtonPressed>()) {
+                    if (mousePressed->button == sf::Mouse::Button::Left) {
+                        int btn = ui.checkGameOverClick(mousePressed->position.x, mousePressed->position.y);
+                        if (btn == 1) {
+                             player.reset(); enemies.clear(); gameState = 1;
+                              }
+                        if (btn == 2) {
+                             player.reset(); enemies.clear(); gameState = 0;
+                         }
+                        if (btn == 3) window.close();
                     }
                 }
             }
