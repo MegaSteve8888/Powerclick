@@ -11,7 +11,9 @@ UI::UI(): m_font("assets/fonts/arial.ttf"), m_scoreText(m_font), m_livesText(m_f
       m_gameoverTex("assets/sprites/btn_gameover.png"), m_gameoverSprite(m_gameoverTex), m_restartBtnTex("assets/sprites/btn_restart.png"),
        m_restartBtnSprite(m_restartBtnTex), m_mainmenuTex("assets/sprites/btn_mainmenu.png"), m_mainmenuSprite(m_mainmenuTex),
         m_quitGoTex("assets/sprites/btn_quit_go.png"), m_quitGoSprite(m_quitGoTex), m_highscoreTitleTex("assets/sprites/btn_highscore_title.png"),
-         m_highscoreTitleSprite(m_highscoreTitleTex), m_backTex("assets/sprites/btn_back.png"), m_backSprite(m_backTex)
+         m_highscoreTitleSprite(m_highscoreTitleTex), m_backTex("assets/sprites/btn_back.png"), m_backSprite(m_backTex),
+          m_diffTitleTex("assets/sprites/btn_difficulty_title.png"), m_diffTitleSprite(m_diffTitleTex), m_normalTex("assets/sprites/btn_normal.png"),
+           m_normalSprite(m_normalTex), m_hardTex("assets/sprites/btn_hard.png"), m_hardSprite(m_hardTex)
 {
 
     // HUD text
@@ -76,6 +78,11 @@ UI::UI(): m_font("assets/fonts/arial.ttf"), m_scoreText(m_font), m_livesText(m_f
     //high score button
     m_highscoreTitleSprite.setPosition(sf::Vector2f(SCREEN_WIDTH / 2.0f - 200.0f, 150.0f));
     m_quitGoSprite.setPosition(sf::Vector2f(SCREEN_WIDTH / 2.0f - 150.0f, 500.0f));
+
+    // difficulty mode choose button
+    m_diffTitleSprite.setPosition(sf::Vector2f(SCREEN_WIDTH / 2.0f - 200.0f, 150.0f));
+    m_normalSprite.setPosition(sf::Vector2f(SCREEN_WIDTH / 2.0f - 150.0f, 320.0f));
+    m_hardSprite.setPosition(sf::Vector2f(SCREEN_WIDTH / 2.0f - 150.0f, 420.0f));
 
 }
 
